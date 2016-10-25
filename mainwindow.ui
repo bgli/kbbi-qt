@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>527</width>
-    <height>362</height>
+    <width>528</width>
+    <height>361</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -17,7 +17,11 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Kamus Besar Bahasa Indonesia</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../KBBI-qt.png</normaloff>../KBBI-qt.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -75,8 +79,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>527</width>
-     <height>22</height>
+     <width>528</width>
+     <height>23</height>
     </rect>
    </property>
   </widget>
