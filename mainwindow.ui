@@ -20,8 +20,8 @@
    <string>Kamus Besar Bahasa Indonesia</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>../KBBI-qt.png</normaloff>../KBBI-qt.png</iconset>
+   <iconset resource="resource.qrc">
+    <normaloff>:/kbbi-qt.png</normaloff>:/kbbi-qt.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -95,6 +95,8 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>
