@@ -1,4 +1,6 @@
 # KBBI Qt
+
+[![Build Status](https://travis-ci.org/bgli/kbbi-qt.svg?branch=master)](https://travis-ci.org/bgli/kbbi-qt)
 KBBI Qt adalah aplikasi Kamus Besar Bahasa Indonesia yang dikembangkan menggunakan bahasa pemrograman C++ dan Framework Qt.
 
 # Ikut Terlibat
