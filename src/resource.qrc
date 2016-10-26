@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>kbbi-qt.png</file>
+        <file>data/KBBI.db</file>
     </qresource>
 </RCC>
