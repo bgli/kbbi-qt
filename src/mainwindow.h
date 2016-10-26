@@ -19,6 +19,9 @@ public:
 private:
     Ui::MainWindow *ui;
     QSqlDatabase database;
+
+    // Action
+    void copyDBfromRes();
 };
 
 #endif // MAINWINDOW_H
