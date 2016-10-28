@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QSqlDatabase>
+#include <QSqlQueryModel>
+
 
 namespace Ui {
 class MainWindow;
@@ -16,12 +18,19 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private slots:
+    void slotCariKata();
+    void pilihKata(QModelIndex index);
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase database;
+    QSqlQueryModel *kamusModel;
 
     // Action
     void copyDBfromRes();
+    void searchQuery(QString keyword);
+
 };
 
 #endif // MAINWINDOW_H
