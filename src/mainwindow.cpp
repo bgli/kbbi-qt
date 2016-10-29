@@ -18,20 +18,21 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->listView,SIGNAL(clicked(QModelIndex)),this,SLOT(pilihKata(QModelIndex)));
     connect(ui->listView,SIGNAL(activated(QModelIndex)),this,SLOT(pilihKata(QModelIndex)));
 
+
     // Init Database
     QString     mNamaDb = "KBBI.db";
     QFileInfo   mFileDb(mNamaDb);
 
-//    qDebug()<< "Lokasi DB : " << mFileDb.absoluteFilePath();
+    // qDebug()<< "Lokasi DB : " << mFileDb.absoluteFilePath();
 
     // Chek File DB
     if(mFileDb.exists()){
 
-//        qDebug()<< "File database ditemukan";
+        // qDebug()<< "File database ditemukan";
 
     }else{
 
-//        qDebug()<< "File database tidak ditemukan";
+        // qDebug()<< "File database tidak ditemukan";
         // Copy file dari resource jika database belum ada
         this->copyDBfromRes();
 
@@ -42,17 +43,17 @@ MainWindow::MainWindow(QWidget *parent) :
     database.setDatabaseName("KBBI.db");
     database.open();
 
-//    qDebug()<< "Is connect? " << database.open();
+    // qDebug()<< "Is connect? " << database.open();
 
     QSqlQuery testquery;
     if(testquery.exec("SELECT COUNT(*) AS JUMLAH FROM datakata")){
-//        qDebug()<< "Query OK ";
+        // qDebug()<< "Query OK ";
 
         while(testquery.next()){
-//            qDebug()<< "Data : " << testquery.value("JUMLAH").toString();
+            // qDebug()<< "Data : " << testquery.value("JUMLAH").toString();
         }
     }else{
-//        qDebug()<< "Query Not OK ";
+        // qDebug()<< "Query Not OK ";
     }
 
     // Setup Query Model
@@ -79,12 +80,12 @@ void MainWindow::copyDBfromRes(){
         QFile dbFile(fileOut);
         dbFile.setPermissions(QFile::ReadUser);
 
-//        qDebug()<<"Berkas basis data berhasil disalin dari resource";
+        // qDebug()<<"Berkas basis data berhasil disalin dari resource";
         ui->statusBar->showMessage("Berkas basis data berhasil disalin dari resource",5000);
 
     }else{
 
-//        qDebug()<<"Gagal menyalin berkas dari file resource";
+        // qDebug()<<"Gagal menyalin berkas dari file resource";
         ui->statusBar->showMessage("Gagal menyalin berkas dari file resource",5000);
 
     }
@@ -92,6 +93,10 @@ void MainWindow::copyDBfromRes(){
 
 void MainWindow::searchQuery(QString keyword)
 {
+    // Bersihkan bekas pencarian
+    kamusModel->clear();
+    ui->detailResult->clear();
+
     QString queryCari = "SELECT katakunci,artikata FROM datakata WHERE katakunci like '%"+keyword+"%'";
 
     queryCari += " UNION ALL ";
@@ -106,13 +111,20 @@ void MainWindow::searchQuery(QString keyword)
 
     QString resultCount = QString::number(kamusModel->rowCount());
 
-    ui->statusBar->showMessage("Menampilkan "+resultCount+" data");
+    // ui->statusBar->showMessage("Menampilkan "+resultCount+" data");
 
     ui->listView->setModel(kamusModel);
 
     // Set focus kembali ke lineEdit
     ui->lineCari->setFocus();
 
+    if(kamusModel->rowCount() > 0){
+        QModelIndex firstRow = kamusModel->index(0,0);
+        ui->listView->setCurrentIndex(firstRow);
+        emit ui->listView->activated(firstRow);
+    }else{
+        ui->statusBar->showMessage("Tidak ada data yang cocok dengan kata kunci \""+keyword+"\"");
+    }
 }
 
 void MainWindow::slotCariKata()
