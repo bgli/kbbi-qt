@@ -110,6 +110,9 @@ void MainWindow::searchQuery(QString keyword)
 
     ui->listView->setModel(kamusModel);
 
+    // Set focus kembali ke lineEdit
+    ui->lineCari->setFocus();
+
 }
 
 void MainWindow::slotCariKata()
