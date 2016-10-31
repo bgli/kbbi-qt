@@ -22,6 +22,8 @@ private slots:
     void slotCariKata();
     void pilihKata(QModelIndex index);
 
+    void on_actionTentang_triggered();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase database;

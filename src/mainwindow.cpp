@@ -1,8 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "mydialog.h"
 #include <QDebug>
 #include <QSqlQuery>
 #include <QFileInfo>
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -154,3 +156,10 @@ MainWindow::~MainWindow()
 }
 
 
+
+void MainWindow::on_actionTentang_triggered()
+{
+    MyDialog mDialog;
+    mDialog.setModal(true);
+    mDialog.exec();
+}

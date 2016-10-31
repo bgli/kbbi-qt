@@ -13,11 +13,14 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    mydialog.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    mydialog.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    mydialog.ui
 
 RESOURCES += \
     resource.qrc
