@@ -55,7 +55,7 @@ MainWindow::MainWindow(QWidget *parent) :
     }
 
     // Setup Query Model
-    kamusModel = new QSqlQueryModel;
+    kamusModel = new QSqlQueryModel(this);
     kamusModel->setHeaderData(0,Qt::Horizontal,tr("Kata Kunci"));
     kamusModel->setHeaderData(1,Qt::Horizontal,tr("Arti Kata"));
     ui->listView->setModel(kamusModel);
