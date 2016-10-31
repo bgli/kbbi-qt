@@ -16,9 +16,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Signal Slot pilih kata
     connect(ui->listView,SIGNAL(clicked(QModelIndex)),this,SLOT(pilihKata(QModelIndex)));
-//    connect(ui->listView,SIGNAL(activated(QModelIndex)),this,SLOT(pilihKata(QModelIndex)));
-
-
 
     // Init Database
     QString     mNamaDb = "KBBI.db";
@@ -61,6 +58,8 @@ MainWindow::MainWindow(QWidget *parent) :
     kamusModel = new QSqlQueryModel;
     kamusModel->setHeaderData(0,Qt::Horizontal,tr("Kata Kunci"));
     kamusModel->setHeaderData(1,Qt::Horizontal,tr("Arti Kata"));
+    ui->listView->setModel(kamusModel);
+    connect(ui->listView->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)), this, SLOT(pilihKata(QModelIndex)));
 
     this->searchQuery("");
 
@@ -119,20 +118,6 @@ void MainWindow::searchQuery(QString keyword)
     // qDebug()<<queryCari;
 
     kamusModel->setQuery(queryCari);
-
-//    QString resultCount = QString::number(kamusModel->rowCount());
-
-    // ui->statusBar->showMessage("Menampilkan "+resultCount+" data");
-    if(ui->listView->model()) {
-        if(disconnect(ui->listView->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)), this, SLOT(pilihKata(QModelIndex))))
-        {
-            qDebug() << "Disconnect successfull!";
-        } else {
-            qDebug() << "Unable to disconnect";
-        }
-    }
-    ui->listView->setModel(kamusModel);
-    connect(ui->listView->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)), this, SLOT(pilihKata(QModelIndex)));
 
     // Set focus kembali ke lineEdit
     ui->lineCari->setFocus();
