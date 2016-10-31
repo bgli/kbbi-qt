@@ -96,16 +96,26 @@ void MainWindow::searchQuery(QString keyword)
     // Bersihkan bekas pencarian
     kamusModel->clear();
     ui->detailResult->clear();
+    ui->statusBar->showMessage("");
 
-    QString queryCari = "SELECT katakunci,artikata FROM datakata WHERE katakunci like '%"+keyword+"%'";
+    // Dahulukan hasil dengan kata depan paling cocok
+    QString queryCari = "SELECT katakunci,artikata FROM datakata WHERE katakunci like '"+keyword+"%'";
 
-    queryCari += " UNION ALL ";
+    // Jika Checkbox tercentang
+    if(ui->chekCariDetail->checkState() == Qt::Checked){
 
-    queryCari += "SELECT katakunci,artikata FROM datakata WHERE artikata like '%"+keyword+"%'";
+        queryCari += " UNION ALL ";
+
+        queryCari += "SELECT katakunci,artikata FROM datakata WHERE artikata like '%"+keyword+"%'";
+
+    }
+
 
     if(keyword.isEmpty()){
         queryCari += " LIMIT 0,100";
     }
+
+    // qDebug()<<queryCari;
 
     kamusModel->setQuery(queryCari);
 
