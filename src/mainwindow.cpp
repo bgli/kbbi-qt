@@ -140,8 +140,6 @@ void MainWindow::searchQuery(QString keyword)
     if(kamusModel->rowCount() > 0){
         QModelIndex firstRow = kamusModel->index(0,0);
         ui->listView->setCurrentIndex(firstRow);
-        emit ui->listView->activated(firstRow);
-//        ui->listView->selectionModel()->select(firstRow, QItemSelectionModel::Select);
     }else{
         ui->statusBar->showMessage("Tidak ada data yang cocok dengan kata kunci \""+keyword+"\"");
     }
