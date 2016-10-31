@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Tentang KBBI Qt</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/kbbi-qt.png</normaloff>:/kbbi-qt.png</iconset>
+  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -98,6 +102,8 @@ color:red;
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>
