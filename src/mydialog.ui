@@ -89,7 +89,7 @@ color:red;
 }</string>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;KBBI Qt adalah aplikasi Kamus Besar Bahasa Indonesia yang dikembangkan menggunakan bahasa pemrograman C++ dan Framework Qt.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;Aplikasi yang dikembangkan oleh komunitas Belajar GNU/Linux Indonesia (BGLI) ini dapat digunakan, didistribusikan dan dikembangaksecara bebas.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;Silakan ikut andil dalam pengembangan aplikasi ini melalui lumbung &lt;a href=&quot;https://github.com/bgli/kbbi-qt&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Github BGLI.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;KBBI Qt adalah aplikasi Kamus Besar Bahasa Indonesia yang dikembangkan menggunakan bahasa pemrograman C++ dan Framework Qt.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;Aplikasi yang dikembangkan oleh komunitas Belajar GNU/Linux Indonesia (BGLI) ini dapat digunakan, didistribusikan dan dikembangkan secara bebas.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;Silakan ikut andil dalam pengembangan aplikasi ini melalui lumbung &lt;a href=&quot;https://github.com/bgli/kbbi-qt&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Github BGLI.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
