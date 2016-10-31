@@ -16,7 +16,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Signal Slot pilih kata
     connect(ui->listView,SIGNAL(clicked(QModelIndex)),this,SLOT(pilihKata(QModelIndex)));
-    connect(ui->listView,SIGNAL(activated(QModelIndex)),this,SLOT(pilihKata(QModelIndex)));
+//    connect(ui->listView,SIGNAL(activated(QModelIndex)),this,SLOT(pilihKata(QModelIndex)));
+
 
 
     // Init Database
@@ -119,11 +120,19 @@ void MainWindow::searchQuery(QString keyword)
 
     kamusModel->setQuery(queryCari);
 
-    QString resultCount = QString::number(kamusModel->rowCount());
+//    QString resultCount = QString::number(kamusModel->rowCount());
 
     // ui->statusBar->showMessage("Menampilkan "+resultCount+" data");
-
+    if(ui->listView->model()) {
+        if(disconnect(ui->listView->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)), this, SLOT(pilihKata(QModelIndex))))
+        {
+            qDebug() << "Disconnect successfull!";
+        } else {
+            qDebug() << "Unable to disconnect";
+        }
+    }
     ui->listView->setModel(kamusModel);
+    connect(ui->listView->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)), this, SLOT(pilihKata(QModelIndex)));
 
     // Set focus kembali ke lineEdit
     ui->lineCari->setFocus();
@@ -132,6 +141,7 @@ void MainWindow::searchQuery(QString keyword)
         QModelIndex firstRow = kamusModel->index(0,0);
         ui->listView->setCurrentIndex(firstRow);
         emit ui->listView->activated(firstRow);
+//        ui->listView->selectionModel()->select(firstRow, QItemSelectionModel::Select);
     }else{
         ui->statusBar->showMessage("Tidak ada data yang cocok dengan kata kunci \""+keyword+"\"");
     }
