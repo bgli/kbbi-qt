@@ -1,9 +1,51 @@
+diff --git a/db_location.patch b/db_location.patch
+index d74e4b4..e69de29 100644
+--- a/db_location.patch
++++ b/db_location.patch
+@@ -1,37 +0,0 @@
+-diff --git a/src/mainwindow.cpp b/src/mainwindow.cpp
+-index e288912..ca03c38 100644
+---- a/src/mainwindow.cpp
+-+++ b/src/mainwindow.cpp
+-@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :
+- 
+- 
+-     // Init Database
+--    QString     mNamaDb = "KBBI.db";
+-+    QString     mNamaDb = "/opt/KBBI-Qt/KBBI.db";
+-     QFileInfo   mFileDb(mNamaDb);
+- 
+-     // qDebug()<< "Lokasi DB : " << mFileDb.absoluteFilePath();
+-@@ -40,7 +40,7 @@ MainWindow::MainWindow(QWidget *parent) :
+- 
+-     // Connect to DB
+-     database = QSqlDatabase::addDatabase("QSQLITE");
+--    database.setDatabaseName("KBBI.db");
+-+    database.setDatabaseName("/opt/KBBI-Qt/KBBI.db");
+-     database.open();
+- 
+-     // qDebug()<< "Is connect? " << database.open();
+-@@ -71,7 +71,7 @@ void MainWindow::copyDBfromRes(){
+-     // Nama File output copy
+-     // Tanpa full absolute path supaya diletakkan satu level
+-     // di direktori yang sama dengan file aplikasi
+--    QString fileOut = "KBBI.db";
+-+    QString fileOut = "/opt/KBBI-Qt/KBBI.db";
+- 
+-     // Copy File dari Resource File
+-     if(QFile::copy(":/data/KBBI.db",fileOut)){
+-@@ -149,5 +149,3 @@ MainWindow::~MainWindow()
+- {
+-     delete ui;
+- }
+--
+--
 diff --git a/src/mainwindow.cpp b/src/mainwindow.cpp
-index e288912..ca03c38 100644
+index 3a43f79..220ab40 100644
 --- a/src/mainwindow.cpp
 +++ b/src/mainwindow.cpp
 @@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :
- 
+     connect(ui->listView,SIGNAL(clicked(QModelIndex)),this,SLOT(pilihKata(QModelIndex)));
  
      // Init Database
 -    QString     mNamaDb = "KBBI.db";
@@ -20,7 +62,7 @@ index e288912..ca03c38 100644
      database.open();
  
      // qDebug()<< "Is connect? " << database.open();
-@@ -71,7 +71,7 @@ void MainWindow::copyDBfromRes(){
+@@ -73,7 +73,7 @@ void MainWindow::copyDBfromRes(){
      // Nama File output copy
      // Tanpa full absolute path supaya diletakkan satu level
      // di direktori yang sama dengan file aplikasi
@@ -29,9 +71,3 @@ index e288912..ca03c38 100644
  
      // Copy File dari Resource File
      if(QFile::copy(":/data/KBBI.db",fileOut)){
-@@ -149,5 +149,3 @@ MainWindow::~MainWindow()
- {
-     delete ui;
- }
--
--
