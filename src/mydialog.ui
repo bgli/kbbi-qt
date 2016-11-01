@@ -121,6 +121,90 @@ color:red;
     <string>Versi 1.0.0</string>
    </property>
   </widget>
+  <widget class="QListWidget" name="listWidget">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>270</y>
+     <width>341</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Showcheap (https://github.com/showcheap)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>La Ode Muh. Fadlun Akbar (https://github.com/alunux)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Ramdziana Feri Yustitanto (@https://github.com/rafeyu)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Rania el-Amina (https://github.com/raniaamina)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Hanhan (https://github.com/hahn)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Aziz Pratama (https://github.com/azispratama92)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Christian Kurniawan (https://github.com/saa7go)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>as3mbus (https://github.com/as3mbus)</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="tentangKBBI_3">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>250</y>
+     <width>151</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+     <kerning>true</kerning>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">p {
+color:red;
+}</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;Pengembang KBBI Qt&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+   <property name="openExternalLinks">
+    <bool>true</bool>
+   </property>
+  </widget>
  </widget>
  <resources>
   <include location="resource.qrc"/>

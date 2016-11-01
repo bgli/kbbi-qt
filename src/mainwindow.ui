@@ -109,7 +109,6 @@ p, li { white-space: pre-wrap; }
      <string>KBBI Qt</string>
     </property>
     <addaction name="actionTentang"/>
-    <addaction name="actionBantuan"/>
     <addaction name="separator"/>
     <addaction name="actionKeluar"/>
    </widget>
