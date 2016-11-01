@@ -32,6 +32,7 @@ private:
     // Action
     void copyDBfromRes();
     void searchQuery(QString keyword);
+    void modifyHtmlTag(QString & text);
 
 };
 
