@@ -132,6 +132,18 @@ void MainWindow::searchQuery(QString keyword)
     }
 }
 
+void MainWindow::modifyHtmlTag(QString &text)
+{
+//    text.replace("&lt;", "<").replace("&gt;", ">");
+    text.replace(0, QString("<b>").length(), "<b style='color:red;background-color:yellow'>");
+    text.replace("<b>", "<b style='color:red'>");
+    text.replace("<i>n</i>", "<i style='color:blue'>n</i>");
+    text.replace("<i>v</i>", "<i style='color:blue'>v</i>");
+    text.replace("<i>", "<i style='color:green'>");
+    text.replace("<br>", "<br/><br/>");
+//    text.replace("<", "&lt;").replace(">","&gt;");
+}
+
 void MainWindow::slotCariKata()
 {
     QString keyword = ui->lineCari->text();
@@ -146,7 +158,10 @@ void MainWindow::pilihKata(QModelIndex index)
     QTextDocument doc;
     doc.setHtml(resultText);
 
-    ui->detailResult->setText(doc.toPlainText());
+    QString modifiedText = doc.toPlainText();
+    modifyHtmlTag(modifiedText);
+
+    ui->detailResult->setText(modifiedText);
 
 }
 
