@@ -134,14 +134,38 @@ void MainWindow::searchQuery(QString keyword)
 
 void MainWindow::modifyHtmlTag(QString &text)
 {
-//    text.replace("&lt;", "<").replace("&gt;", ">");
     text.replace(0, QString("<b>").length(), "<b style='color:red;background-color:yellow'>");
     text.replace("<b>", "<b style='color:red'>");
     text.replace("<i>n</i>", "<i style='color:blue'>n</i>");
     text.replace("<i>v</i>", "<i style='color:blue'>v</i>");
     text.replace("<i>", "<i style='color:green'>");
-    text.replace("<br>", "<br/><br/>");
-//    text.replace("<", "&lt;").replace(">","&gt;");
+    text.replace("<br>", "<br/>");
+
+    const QString awalan("--<b");
+    const QString akhiran(";");
+    const QString tag_start("<div style='margin-left:20px;margin-top:0px;margin-bottom:10px;margin-right:0px;'>");
+    const QString tag_end("</div>");
+
+    int current_index, previous_index;
+
+    // cek ada list atau tidak (--<b>text)
+    current_index = text.indexOf(awalan);
+
+    // list tidak ditemukan
+    if(current_index == -1)
+        return;
+    else {  // list ditemukan
+        for(;;) {
+            previous_index = current_index;
+            text.insert(current_index, tag_start);
+            current_index = text.indexOf(akhiran, previous_index + tag_start.length());
+            text.insert(current_index+akhiran.length(), tag_end);
+
+            current_index = text.indexOf(awalan,current_index + akhiran.length() + tag_end.length());
+            if(current_index == -1)
+                break;
+        }
+    }
 }
 
 void MainWindow::slotCariKata()
