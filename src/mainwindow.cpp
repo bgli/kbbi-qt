@@ -157,9 +157,14 @@ void MainWindow::modifyHtmlTag(QString &text)
         return;
     else {  // list ditemukan
         for(;;) {
-//            previous_index = current_index;
             text.insert(current_index, tag_start);
             current_index = text.indexOf(akhiran, current_index + tag_start.length());
+
+            // tidak ditemukan titik koma (;), paksa akhiran menggunakan </div>
+            if(current_index == -1) {
+                text.insert(text.length(), tag_end);
+                break;
+            }
             text.insert(current_index+akhiran.length(), tag_end);
 
             current_index = text.indexOf(awalan,current_index + akhiran.length() + tag_end.length());
