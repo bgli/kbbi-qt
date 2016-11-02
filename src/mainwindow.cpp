@@ -146,7 +146,7 @@ void MainWindow::modifyHtmlTag(QString &text)
     const QString tag_start("<div style='margin-left:20px;margin-top:0px;margin-bottom:10px;margin-right:0px;'>");
     const QString tag_end("</div>");
 
-    int current_index, previous_index;
+    int current_index;
 
     // cek ada list atau tidak (--<b>text)
     current_index = text.indexOf(awalan);
@@ -156,9 +156,9 @@ void MainWindow::modifyHtmlTag(QString &text)
         return;
     else {  // list ditemukan
         for(;;) {
-            previous_index = current_index;
+//            previous_index = current_index;
             text.insert(current_index, tag_start);
-            current_index = text.indexOf(akhiran, previous_index + tag_start.length());
+            current_index = text.indexOf(akhiran, current_index + tag_start.length());
             text.insert(current_index+akhiran.length(), tag_end);
 
             current_index = text.indexOf(awalan,current_index + akhiran.length() + tag_end.length());
