@@ -101,17 +101,18 @@ void MainWindow::searchQuery(QString keyword)
     ui->statusBar->showMessage("");
 
     // Dahulukan hasil dengan kata depan paling cocok
-    QString queryCari = "SELECT katakunci,artikata FROM datakata WHERE katakunci like '"+keyword+"%'";
+    QString queryCari = "SELECT katakunci,artikata FROM datakata WHERE katakunci like '"+keyword+"%'\n";
 
     // Jika Checkbox tercentang
     if(ui->chekCariDetail->checkState() == Qt::Checked){
 
-        queryCari += " UNION ALL ";
+        queryCari += " UNION ALL \n";
 
-        queryCari += "SELECT katakunci,artikata FROM datakata WHERE artikata like '%"+keyword+"%'";
+        queryCari += "SELECT katakunci,artikata FROM datakata WHERE artikata like '%"+keyword+"%'\n";
 
     }
 
+    queryCari += "  ORDER BY katakunci ASC\n";
 
     if(keyword.isEmpty()){
         queryCari += " LIMIT 0,100";

@@ -1,7 +1,7 @@
 # KBBI Qt
 
 [![Build Status](https://travis-ci.org/bgli/kbbi-qt.svg?branch=master)](https://travis-ci.org/bgli/kbbi-qt)
-![Copr](https://copr.fedorainfracloud.org/coprs/alunux/kbbi-qt-git/package/KBBI-Qt/status_image/last_build.png)
+[![Copr](https://copr.fedorainfracloud.org/coprs/alunux/kbbi-qt-git/package/KBBI-Qt/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/alunux/kbbi-qt-git/)
 
 KBBI Qt adalah aplikasi Kamus Besar Bahasa Indonesia yang dikembangkan menggunakan bahasa pemrograman C++ dan Framework Qt.
 
