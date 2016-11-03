@@ -38,7 +38,7 @@
            </size>
           </property>
           <property name="placeholderText">
-           <string>Masukkan lema/kata kunci pencarian</string>
+           <string>Masukkan lema / kata kunci pencarian</string>
           </property>
          </widget>
         </item>
