@@ -35,7 +35,7 @@
    <iconset resource="resource.qrc">
     <normaloff>:/kbbi-qt.png</normaloff>:/kbbi-qt.png</iconset>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>13</x>
@@ -157,7 +157,7 @@ color:red;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Aurulent Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;KBBI Qt adalah aplikasi Kamus Besar Bahasa Indonesia yang dikembangkan menggunakan bahasa pemrograman C++ dan Framework Qt.&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Aplikasi yang dikembangkan oleh komunitas Belajar GNU/Linux Indonesia (BGLI) ini dapat digunakan, didistribusikan dan dikembangkan secara bebas.&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Aplikasi yang dikembangkan oleh komunitas Belajar GNU/Linux Indonesia (BGLI) ini dapat digunakan, didistribusikan, dan dikembangkan secara bebas.&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Silakan ikut andil dalam pengembangan aplikasi ini melalui lumbung &lt;a href=&quot;https://github.com/bgli/kbbi-qt&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Github BGLI.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>

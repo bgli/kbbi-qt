@@ -1,3 +1,24 @@
+/*
+    KBBI Qt is a GUI based C++/Qt Framework program for The Big Indonesian Language Dictionary. 
+    
+    Copyright (C) 2016 KBBI Qt Team <https://github.com/bgli/kbbi-qt>
+    
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, version 3 of the License.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    
+    This file is a part of KBBI Qt source code. 
+    This file is written by Sucipto <admin@sucipto.net>, 
+    Christian Kurniawan <saa7.go@gmail.com>, and 
+    Rania el-Amina <reaamina@gmail.com>. 
+*/
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "mydialog.h"
@@ -135,14 +156,54 @@ void MainWindow::searchQuery(QString keyword)
 
 void MainWindow::modifyHtmlTag(QString &text)
 {
-//    text.replace("&lt;", "<").replace("&gt;", ">");
     text.replace(0, QString("<b>").length(), "<b style='color:red;background-color:yellow'>");
     text.replace("<b>", "<b style='color:red'>");
     text.replace("<i>n</i>", "<i style='color:blue'>n</i>");
     text.replace("<i>v</i>", "<i style='color:blue'>v</i>");
     text.replace("<i>", "<i style='color:green'>");
-    text.replace("<br>", "<br/><br/>");
-//    text.replace("<", "&lt;").replace(">","&gt;");
+    text.replace("<br>", "<br/>");
+
+    const QString awalan("--<b");
+    const QString akhiran(";");
+    const QString &akhiran2 = awalan;
+    const QString tag_start("<div style='margin-left:20px;margin-top:0px;margin-bottom:10px;margin-right:0px;'>");
+    const QString tag_end("</div>");
+
+    int current_index, end_index;
+
+    // cek ada list atau tidak (--<b>text)
+    current_index = text.indexOf(awalan);
+
+    // list tidak ditemukan
+    if(current_index == -1)
+        return;
+    else {  // list ditemukan
+        for(;;) {
+            text.insert(current_index, tag_start);
+            end_index = text.indexOf(akhiran2, current_index + tag_start.length() + awalan.length());
+
+            // tidak ditemukan list berikutnya
+            if(end_index == -1) {
+                // cari titik koma jika list tidak ditemukan
+                end_index = text.indexOf(akhiran, current_index + tag_start.length());
+
+                // tidak ditemukan titik koma (;), paksa akhiran menggunakan </div>
+                if(end_index == -1) {
+                    text.insert(text.length(), tag_end);
+                    break;
+                } else {
+                    text.insert(end_index + akhiran.length(), tag_end);
+                    break;
+                }
+            } else {
+                text.insert(end_index, tag_end);
+
+                current_index = text.indexOf(awalan,end_index + tag_end.length());
+                if(current_index == -1)
+                    break;
+            }
+        }
+    }
 }
 
 void MainWindow::slotCariKata()
@@ -163,7 +224,6 @@ void MainWindow::pilihKata(QModelIndex index)
     modifyHtmlTag(modifiedText);
 
     ui->detailResult->setText(modifiedText);
-
 }
 
 MainWindow::~MainWindow()

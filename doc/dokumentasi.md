@@ -2,10 +2,10 @@
 ## 1.1 Apa itu KBBI-Qt?
 KBBI-Qt adalah aplikasi Kamus Besar Bahasa Indonesia yang dikembangkan dengan bahasa pemrograman C++ dan Framework Qt.
 
-Dirilis dengan lisensi GPLv3, aplikasi yang dikembangkan oleh komunitas Belajar GNU/Linux Indonesia (BGLI) ini dapat digunakan, didistribusikan, dan dikembangkan secara bebas.
+Dirilis dengan lisensi GNU GPL v3.0, maka KBBI Qt adalah ([free software](https://www.gnu.org/philosophy/free-sw.en.html)), sehingga aplikasi yang dikembangkan oleh komunitas Belajar GNU/Linux Indonesia (BGLI) ini bebas dijalankan untuk tujuan apa pun, digunakan, didistribusikan (baik berbayar atau gratis), disalin, dimodifikasi, dan dikembangkan.
 
-## 1.2 Keuntungan menggunakan KBBI-Qt
-Badan Pengembangan dan Pembinaan Bahasa (Badan Bahasa) serta Kementrian Pendidikan dan Kebudayaan (Kemendikbud) sebenarnya telah merilis aplikasi KBBI berbasis web; [kbbi.web.id][0] (KBBI III), [kbbi4.portalbahasa.com][1] (KBBI IV), dan [kbbi.kemdikbud.go.id][2] (KBBI V). Namun, ketiganya memiliki kekurangan, yakni pengguna harus mengaksesnya dalam keadaan daring (*online*).
+## 1.2 Keuntungan menggunakan KBBI-qt
+Badan Pengembangan dan Pembinaan Bahasa (Badan Bahasa) serta Kementerian Pendidikan dan Kebudayaan (Kemendikbud) sebenarnya telah merilis aplikasi KBBI berbasis web; [kbbi.web.id][0] (KBBI III), [kbbi4.portalbahasa.com][1] (KBBI IV), dan [kbbi.kemdikbud.go.id][2] (KBBI V). Namun, ketiganya memiliki kekurangan, yakni pengguna harus dalam keadaan daring untuk mengaksesnya.
 
 KBBI-Qt ingin memastikan bahwa pengguna bisa mengakses KBBI dalam keadaan luring melalui komputer atau laptop.
 
@@ -29,7 +29,7 @@ Beberapa kontributor telah memaketkan aplikasi KBBI-Qt ke paket-paket distro ter
     $ qmake -project
     $ make
 
-# 3. Pengenalan antar muka
+# 3. Pengenalan antarmuka
 ![pengenalan antarmuka](gbr/pengenalan-antarmuka.png)
 
 # 4. Penggunaan KBBI-Qt
@@ -63,3 +63,4 @@ Klik kolom hasil pencarian, tahan tombol *Ctrl* pada *keyboard*, lalu *scroll* m
 [0]: http://kbbi.web.id
 [1]: http://kbbi4.portalbahasa.com
 [2]: http://kbbi.kemdikbud.go.id/
+[4]: https://www.gnu.org/philosophy/free-sw.en.html
