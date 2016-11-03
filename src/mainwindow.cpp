@@ -144,10 +144,11 @@ void MainWindow::modifyHtmlTag(QString &text)
 
     const QString awalan("--<b");
     const QString akhiran(";");
+    const QString &akhiran2 = awalan;
     const QString tag_start("<div style='margin-left:20px;margin-top:0px;margin-bottom:10px;margin-right:0px;'>");
     const QString tag_end("</div>");
 
-    int current_index;
+    int current_index, end_index;
 
     // cek ada list atau tidak (--<b>text)
     current_index = text.indexOf(awalan);
@@ -158,18 +159,28 @@ void MainWindow::modifyHtmlTag(QString &text)
     else {  // list ditemukan
         for(;;) {
             text.insert(current_index, tag_start);
-            current_index = text.indexOf(akhiran, current_index + tag_start.length());
+            end_index = text.indexOf(akhiran2, current_index + tag_start.length() + awalan.length());
 
-            // tidak ditemukan titik koma (;), paksa akhiran menggunakan </div>
-            if(current_index == -1) {
-                text.insert(text.length(), tag_end);
-                break;
+            // tidak ditemukan list berikutnya
+            if(end_index == -1) {
+                // cari titik koma jika list tidak ditemukan
+                end_index = text.indexOf(akhiran, current_index + tag_start.length());
+
+                // tidak ditemukan titik koma (;), paksa akhiran menggunakan </div>
+                if(end_index == -1) {
+                    text.insert(text.length(), tag_end);
+                    break;
+                } else {
+                    text.insert(end_index + akhiran.length(), tag_end);
+                    break;
+                }
+            } else {
+                text.insert(end_index, tag_end);
+
+                current_index = text.indexOf(awalan,end_index + tag_end.length());
+                if(current_index == -1)
+                    break;
             }
-            text.insert(current_index+akhiran.length(), tag_end);
-
-            current_index = text.indexOf(awalan,current_index + akhiran.length() + tag_end.length());
-            if(current_index == -1)
-                break;
         }
     }
 }
@@ -192,7 +203,6 @@ void MainWindow::pilihKata(QModelIndex index)
     modifyHtmlTag(modifiedText);
 
     ui->detailResult->setText(modifiedText);
-
 }
 
 MainWindow::~MainWindow()
