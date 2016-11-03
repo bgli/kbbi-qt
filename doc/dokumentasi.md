@@ -2,10 +2,10 @@
 ## 1.1 Apa itu KBBI-qt
 KBBI-Qt adalah aplikasi Kamus Besar Bahasa Indonesia yang dikembangkan dengan bahasa pemrograman C++ dan Framework Qt.
 
-Dirilis dengan lisensi GPLv3, aplikasi yang dikembangkan oleh komunitas Belajar GNU/Linux Indonesia (BGLI) ini dapat digunakan, didistribusikan, dan dikembangkan secara bebas.
+Dirilis dengan lisensi GNU GPL v3.0, maka KBBI Qt adalah [https://www.gnu.org/philosophy/free-sw.en.html][4] (free software), sehingga aplikasi yang dikembangkan oleh komunitas Belajar GNU/Linux Indonesia (BGLI) ini bebas dijalankan untuk tujuan apa pun, digunakan, didistribusikan (baik berbayar atau gratis), disalin, dimodifikasi, dan dikembangkan.
 
 ## 1.2 Keuntungan menggunakan KBBI-qt
-Badan Pengembangan dan Pembinaan Bahasa (Badan Bahasa) serta Kementrian Pendidikan dan Kebudayaan (Kemendikbud) sebenarnya telah merilis aplikasi KBBI berbasis web; [kbbi.web.id][0] (KBBI III), [kbbi4.portalbahasa.com][1] (KBBI IV), dan [kbbi.kemdikbud.go.id][2] (KBBI V). Namun, ketiganya memiliki kekurangan, yakni pengguna harus dalam keadaan daring untuk mengaksesnya.
+Badan Pengembangan dan Pembinaan Bahasa (Badan Bahasa) serta Kementerian Pendidikan dan Kebudayaan (Kemendikbud) sebenarnya telah merilis aplikasi KBBI berbasis web; [kbbi.web.id][0] (KBBI III), [kbbi4.portalbahasa.com][1] (KBBI IV), dan [kbbi.kemdikbud.go.id][2] (KBBI V). Namun, ketiganya memiliki kekurangan, yakni pengguna harus dalam keadaan daring untuk mengaksesnya.
 
 KBBI-qt ingin memastikan bahwa pengguna bisa mengakses KBBI dalam keadaan luring melalui komputer atau laptop.
 
@@ -27,11 +27,11 @@ Beberapa kontributor telah memaketkan aplikasi KBBI-qt ke paket-paket distro ter
     $ qmake -project
     $ make
 
-# 3. Pengenalan antar muka
+# 3. Pengenalan antarmuka
 ![pengenalan antarmuka](gbr/pengenalan-antarmuka.png)
 
 # 4. Penggunaan KBBI-qt
-Untuk mencari arti kata "kamus", ketikan kata "kamus" dalam kolom pencarian, lalu klik tombol "Cari" atau tekan Enter pada *keyboard*.
+Untuk mencari arti kata "kamus", ketikkan kata "kamus" dalam kolom pencarian, lalu klik tombol "Cari" atau tekan Enter pada *keyboard*.
 
 Hasil pencarian akan muncul pada kolom kanan, lihat gambar di bawah ini.
 ![cari kata](gbr/kbbi-qt-cari-kata.png)
@@ -49,3 +49,4 @@ Misal, kata "kamus" termuat dalam arti kata "bahasa", "bausastra", "beli", dll.
 [0]: http://kbbi.web.id
 [1]: http://kbbi4.portalbahasa.com
 [2]: http://kbbi.kemdikbud.go.id/
+[4]: https://www.gnu.org/philosophy/free-sw.en.html
