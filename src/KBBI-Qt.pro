@@ -31,13 +31,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    mydialog.cpp
+    tentang.cpp
 
 HEADERS  += mainwindow.h \
-    mydialog.h
+    tentang.h
 
 FORMS    += mainwindow.ui \
-    mydialog.ui
+    tentang.ui
 
 RESOURCES += \
     resource.qrc
