@@ -21,7 +21,7 @@
 */
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "mydialog.h"
+#include "tentang.h"
 #include <QDebug>
 #include <QSqlQuery>
 #include <QFileInfo>
@@ -89,6 +89,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->statusBar->showMessage("Memulai...",1000);
 
 }
+
 
 void MainWindow::copyDBfromRes(){
     // Nama File output copy
@@ -235,7 +236,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionTentang_triggered()
 {
-    MyDialog mDialog;
-    mDialog.setModal(true);
-    mDialog.exec();
+    tentang tentang(this);
+    tentang.exec();
 }
