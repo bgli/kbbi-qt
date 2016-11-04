@@ -28,9 +28,9 @@ $ sudo dnf copr enable alunux/kbbi-qt-git
 $ sudo dnf install KBBI-Qt
 ```
 
-**Tested on Fedora 24**
+# Kontribusi
+Untuk berkontribusi silahkan _fork_ repositori ini dan melakukan _pull request_ terhadap _branch_ **dev**
 
-![cobalagi-2016-10-31_06](https://cloud.githubusercontent.com/assets/10938708/19840912/d490e360-9f33-11e6-9ff0-501609822bb2.gif)
 
 # Diskusi
 Jika anda ingin terlibat dapat menghubungi kami di group Telegram :
