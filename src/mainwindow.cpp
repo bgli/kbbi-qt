@@ -29,9 +29,11 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow), autoCari(false)
 {
     ui->setupUi(this);
+
+    ui->btnCari->hide();
 
     // Setup Signal and Slot cari
     connect(ui->btnCari,SIGNAL(clicked(bool)),this,SLOT(slotCariKata()));
@@ -238,4 +240,17 @@ void MainWindow::on_actionTentang_triggered()
 {
     tentang tentang(this);
     tentang.exec();
+}
+
+void MainWindow::on_checkAutoCari_clicked()
+{
+    autoCari = ui->checkAutoCari->isChecked();
+}
+
+void MainWindow::on_lineCari_textEdited(const QString &text)
+{
+    if(autoCari == false)
+        return;
+
+    searchQuery(text);
 }

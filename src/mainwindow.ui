@@ -38,7 +38,7 @@
            </size>
           </property>
           <property name="placeholderText">
-           <string>Masukkan lema/kata kunci pencarian</string>
+           <string>Masukkan lema/kata kunci pencarian lalu tekan enter</string>
           </property>
          </widget>
         </item>
@@ -58,11 +58,28 @@
        </layout>
       </item>
       <item>
-       <widget class="QCheckBox" name="chekCariDetail">
-        <property name="text">
-         <string>Cari lema yang memuat unsur pencarian</string>
-        </property>
-       </widget>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QCheckBox" name="chekCariDetail">
+          <property name="text">
+           <string>Cari lema yang memuat unsur pencarian</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkAutoCari">
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="whatsThis">
+           <string/>
+          </property>
+          <property name="text">
+           <string>Aktifkan pencarian otomatis</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>
