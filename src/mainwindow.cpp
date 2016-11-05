@@ -33,9 +33,15 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    ui->btnCari->hide();
+
+    // Init auto cari
+    autoCari = ui->checkAutoCari->isChecked();
+
     // Setup Signal and Slot cari
     connect(ui->btnCari,SIGNAL(clicked(bool)),this,SLOT(slotCariKata()));
     connect(ui->lineCari,SIGNAL(returnPressed()),this,SLOT(slotCariKata()));
+    connect(ui->lineCari,SIGNAL(textChanged(QString)),this,SLOT(on_cariText_changed(QString)));
 
     // Signal Slot pilih kata
     connect(ui->listView,SIGNAL(clicked(QModelIndex)),this,SLOT(pilihKata(QModelIndex)));
@@ -225,6 +231,13 @@ void MainWindow::pilihKata(QModelIndex index)
     modifyHtmlTag(modifiedText);
 
     ui->detailResult->setText(modifiedText);
+}
+
+void MainWindow::on_cariText_changed(QString text)
+{
+    if(autoCari){
+        this->searchQuery(text);
+    }
 }
 
 MainWindow::~MainWindow()

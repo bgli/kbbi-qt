@@ -45,10 +45,13 @@ private slots:
 
     void on_actionTentang_triggered();
 
+    void on_cariText_changed(QString text);
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase database;
     QSqlQueryModel *kamusModel;
+    bool autoCari;
 
     // Action
     void copyDBfromRes();
