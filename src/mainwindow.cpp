@@ -43,41 +43,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->listView,SIGNAL(clicked(QModelIndex)),this,SLOT(pilihKata(QModelIndex)));
 
     // Init Database
-    QString     mNamaDb = "KBBI.db";
-    QFileInfo   mFileDb(mNamaDb);
-
-    // qDebug()<< "Lokasi DB : " << mFileDb.absoluteFilePath();
-
-    // Chek File DB
-    if(mFileDb.exists()){
-
-        // qDebug()<< "File database ditemukan";
-
-    }else{
-
-        // qDebug()<< "File database tidak ditemukan";
-        // Copy file dari resource jika database belum ada
-        this->copyDBfromRes();
-
-    }
-
-    // Connect to DB
-    database = QSqlDatabase::addDatabase("QSQLITE");
-    database.setDatabaseName("KBBI.db");
-    database.open();
-
-    // qDebug()<< "Is connect? " << database.open();
-
-    QSqlQuery testquery;
-    if(testquery.exec("SELECT COUNT(*) AS JUMLAH FROM datakata")){
-        // qDebug()<< "Query OK ";
-
-        while(testquery.next()){
-            // qDebug()<< "Data : " << testquery.value("JUMLAH").toString();
-        }
-    }else{
-        // qDebug()<< "Query Not OK ";
-    }
+    database = QSqlDatabase::database();
 
     // Setup Query Model
     kamusModel = new QSqlQueryModel(this);
@@ -90,31 +56,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->statusBar->showMessage("Memulai...",1000);
 
-}
-
-
-void MainWindow::copyDBfromRes(){
-    // Nama File output copy
-    // Tanpa full absolute path supaya diletakkan satu level
-    // di direktori yang sama dengan file aplikasi
-    QString fileOut = "KBBI.db";
-
-    // Copy File dari Resource File
-    if(QFile::copy(":/data/KBBI.db",fileOut)){
-
-        // Jika berhasil dicopy, set permisson supaya bisa di read
-        QFile dbFile(fileOut);
-        dbFile.setPermissions(QFile::ReadUser);
-
-        // qDebug()<<"Berkas basis data berhasil disalin dari resource";
-        ui->statusBar->showMessage("Berkas basis data berhasil disalin dari resource",5000);
-
-    }else{
-
-        // qDebug()<<"Gagal menyalin berkas dari file resource";
-        ui->statusBar->showMessage("Gagal menyalin berkas dari file resource",5000);
-
-    }
 }
 
 void MainWindow::searchQuery(QString keyword)

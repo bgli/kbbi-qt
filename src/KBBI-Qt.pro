@@ -53,4 +53,21 @@ win32 {
     equals(QT_MAJOR_VERSION, 5) {
         RC_ICONS = kbbi-qt.ico
     }
+
+    DB_FILE = KBBI.db
+    PWD_SOURCE = $${PWD}
+    PWD_SOURCE ~= s,/,\\,g
+    PWD_DEST = $${OUT_PWD}
+    PWD_DEST ~= s,/,\\,g
+
+    CONFIG(release, debug|release) {
+        QMAKE_POST_LINK += $$quote(${COPY} $${PWD_SOURCE}\\data\\${DB_FILE} $${PWD_DEST}\\release\\)
+#        QMAKE_CLEAN += $$quote(release\\$${DB_FILE})
+    }
+
+    CONFIG(debug, debug|release) {
+        QMAKE_POST_LINK += $$quote(${COPY} $${PWD_SOURCE}\\data\\$${DB_FILE} $${PWD_DEST}\\debug\\)
+#        QMAKE_CLEAN += $$quote(debug\\$${DB_FILE})
+    }
 }
+
