@@ -44,16 +44,7 @@ RESOURCES += \
 
 # hanya dicoba di output 32bit
 win32 {
-    # belum dicoba
-    equals(QT_MAJOR_VERSION, 4) {
-        RC_FILE += kbbi-qt.rc
-    }
-
-    # sudah dicoba
-    equals(QT_MAJOR_VERSION, 5) {
-        RC_ICONS = kbbi-qt.ico
-    }
-
+    RC_FILE += kbbi-qt.rc
     DB_FILE = KBBI.db
     PWD_SOURCE = $${PWD}
     PWD_SOURCE ~= s,/,\\,g
@@ -61,7 +52,7 @@ win32 {
     PWD_DEST ~= s,/,\\,g
 
     CONFIG(release, debug|release) {
-        QMAKE_POST_LINK += $$quote(${COPY} $${PWD_SOURCE}\\data\\${DB_FILE} $${PWD_DEST}\\release\\)
+        QMAKE_POST_LINK += $$quote(${COPY} $${PWD_SOURCE}\\data\\$${DB_FILE} $${PWD_DEST}\\release\\)
 #        QMAKE_CLEAN += $$quote(release\\$${DB_FILE})
     }
 
@@ -69,5 +60,6 @@ win32 {
         QMAKE_POST_LINK += $$quote(${COPY} $${PWD_SOURCE}\\data\\$${DB_FILE} $${PWD_DEST}\\debug\\)
 #        QMAKE_CLEAN += $$quote(debug\\$${DB_FILE})
     }
+
 }
 
