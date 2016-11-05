@@ -46,16 +46,9 @@ MainWindow::MainWindow(QWidget *parent) :
     QString     mNamaDb = "KBBI.db";
     QFileInfo   mFileDb(mNamaDb);
 
-    // qDebug()<< "Lokasi DB : " << mFileDb.absoluteFilePath();
-
     // Chek File DB
-    if(mFileDb.exists()){
+    if(!mFileDb.exists()){
 
-        // qDebug()<< "File database ditemukan";
-
-    }else{
-
-        // qDebug()<< "File database tidak ditemukan";
         // Copy file dari resource jika database belum ada
         this->copyDBfromRes();
 
@@ -66,24 +59,11 @@ MainWindow::MainWindow(QWidget *parent) :
     database.setDatabaseName("KBBI.db");
     database.open();
 
-    // qDebug()<< "Is connect? " << database.open();
-
-    QSqlQuery testquery;
-    if(testquery.exec("SELECT COUNT(*) AS JUMLAH FROM datakata")){
-        // qDebug()<< "Query OK ";
-
-        while(testquery.next()){
-            // qDebug()<< "Data : " << testquery.value("JUMLAH").toString();
-        }
-    }else{
-        // qDebug()<< "Query Not OK ";
-    }
 
     // Setup Query Model
     kamusModel = new QSqlQueryModel(this);
-    kamusModel->setHeaderData(0,Qt::Horizontal,tr("Kata Kunci"));
-    kamusModel->setHeaderData(1,Qt::Horizontal,tr("Arti Kata"));
     ui->listView->setModel(kamusModel);
+
     connect(ui->listView->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)), this, SLOT(pilihKata(QModelIndex)));
 
     this->searchQuery("");
@@ -94,6 +74,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
 void MainWindow::copyDBfromRes(){
+
     // Nama File output copy
     // Tanpa full absolute path supaya diletakkan satu level
     // di direktori yang sama dengan file aplikasi
@@ -229,12 +210,6 @@ void MainWindow::pilihKata(QModelIndex index)
     ui->detailResult->setText(modifiedText);
 }
 
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
-
-
 
 void MainWindow::on_actionTentang_triggered()
 {
@@ -254,3 +229,9 @@ void MainWindow::on_lineCari_textEdited(const QString &text)
 
     searchQuery(text);
 }
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
