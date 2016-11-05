@@ -18,10 +18,48 @@
 */
 #include "mainwindow.h"
 #include <QApplication>
+#include <QMessageBox>
+#include <QFile>
+#include <QDir>
+#include <QSqlDatabase>
+#include <QSqlQuery>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    QString dbPath = QDir::currentPath() + "/" + DB_NAME;
+
+    if(!QFile::exists(dbPath)) {
+        QMessageBox::critical(0, "Database Galat", "Berkas database " + DB_NAME + " tidak ditemukan!");
+        return 1;
+    }
+
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    if(!db.isValid()) {
+        QMessageBox::critical(0, "Database Galat", "Driver Database tidak tersedia");
+        return 1;
+    }
+
+    db.setDatabaseName(DB_NAME);
+    if(!db.open()) {
+        QMessageBox::critical(0, "Database Galat", "Gagal membuka database");
+        return 1;
+    } else { // test query
+        QSqlQuery testquery;
+        if(testquery.exec("SELECT COUNT(_id) AS JUMLAH FROM datakata")){
+            if(testquery.next()) {
+                if(testquery.value(0).toInt() != 35969) {
+                    QMessageBox::critical(0, "Database Galat", "Database tidak valid!");
+                    return 1;
+                }
+            }
+        }else{
+            QMessageBox::critical(0, "Database Galat", "Database tidak valid!");
+            return 1;
+        }
+    }
+
     MainWindow w;
     w.show();
 
