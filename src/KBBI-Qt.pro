@@ -41,3 +41,16 @@ FORMS    += mainwindow.ui \
 
 RESOURCES += \
     resource.qrc
+
+# hanya dicoba di output 32bit
+win32 {
+    # belum dicoba
+    equals(QT_MAJOR_VERSION, 4) {
+        RC_FILE += kbbi-qt.rc
+    }
+
+    # sudah dicoba
+    equals(QT_MAJOR_VERSION, 5) {
+        RC_ICONS = kbbi-qt.ico
+    }
+}
