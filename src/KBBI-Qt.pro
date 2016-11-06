@@ -21,7 +21,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql
+QT       += core gui sql network webkit webkitwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -31,13 +31,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    tentang.cpp
+    tentang.cpp \
+    puebi.cpp
 
 HEADERS  += mainwindow.h \
-    tentang.h
+    tentang.h \
+    puebi.h
 
 FORMS    += mainwindow.ui \
-    tentang.ui
+    tentang.ui \
+    puebi.ui
 
 RESOURCES += \
     resource.qrc

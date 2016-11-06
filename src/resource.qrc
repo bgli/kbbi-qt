@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>kbbi-qt.png</file>
         <file>data/KBBI.db</file>
+        <file>data/puebi.html</file>
     </qresource>
 </RCC>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PUEBI</class>
+ <widget class="QDialog" name="PUEBI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>614</width>
+    <height>609</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>614</width>
+    <height>609</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>614</width>
+    <height>609</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Pedoman Umum Ejaan Bahasa Indonesia</string>
+  </property>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>591</width>
+     <height>581</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QWebView" name="webView">
+      <property name="url">
+       <url>
+        <string>file:///home/rania/kbbi-qt_copy/src/data/puebi.html</string>
+       </url>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKitWidgets/QWebView</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

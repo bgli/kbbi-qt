@@ -45,6 +45,8 @@ private slots:
 
     void on_actionTentang_triggered();
 
+    void on_actionPUEBI_triggered();
+
     void on_checkAutoCari_clicked();
 
     void on_lineCari_textEdited(const QString &text);
