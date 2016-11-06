@@ -70,7 +70,7 @@ doc.path = $$INSTALLBASE/data/$$TARGET/doc
 
 dbtarget.path = $$INSTALLBASE/share/$$TARGET/data
 dbtarget.files += KBBI.db
-INSTALLS += dbtarget
+INSTALLS += target doc dbtarget
 }
 
 
