@@ -63,3 +63,14 @@ win32 {
 
 }
 
+unix {
+INSTALLBASE = /usr
+target.path = $$INSTALLBASE/bin
+doc.path = $$INSTALLBASE/data/$$TARGET/doc
+
+dbtarget.path = $$INSTALLBASE/share/$$TARGET/data
+dbtarget.files += KBBI.db
+INSTALLS += dbtarget
+}
+
+

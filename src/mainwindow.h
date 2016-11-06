@@ -28,7 +28,6 @@
 
 const QString DB_NAME = "KBBI.db";
 
-
 namespace Ui {
 class MainWindow;
 }
