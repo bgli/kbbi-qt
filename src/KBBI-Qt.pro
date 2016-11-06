@@ -64,14 +64,13 @@ win32 {
 }
 
 unix {
-INSTALLBASE = /usr
-target.path = $$INSTALLBASE/bin
-doc.path = $$INSTALLBASE/data/$$TARGET/doc
-doc.files +=
-
-dbtarget.path = $$INSTALLBASE/share/$$TARGET/data
-dbtarget.files += $${PWD_SOURCE}/data/KBBI.db
-INSTALLS += target doc dbtarget
+	INSTALLBASE = /usr
+	target.path = $$INSTALLBASE/bin
+	dbtarget.path = $$INSTALLBASE/share/$$TARGET/data
+	dbtarget.files = data/KBBI.db
+	icons.path = $$INSTALLBASE/share/
+	icons.files = KBBI-qt.png
+	INSTALLS += target  dbtarget icons
 }
 
 
