@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     #ifdef Q_OS_WIN
         dbPath = QDir::currentPath() + "/" + DB_NAME;
     #else
-        dbPath = "/usr/share/data/kbbi-qt/" + DB_NAME;
+        dbPath = "/usr/share/KBBI-Qt/data/" + DB_NAME;
     #endif
 
     if(!QFile::exists(dbPath)) {
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    db.setDatabaseName(DB_NAME);
+    db.setDatabaseName(dbPath);
     if(!db.open()) {
         QMessageBox::critical(0, "Database Galat", "Gagal membuka database");
         return 1;

@@ -71,12 +71,12 @@ unix {
 	icons.path = $$INSTALLBASE/share/
 	icons.files = src/KBBI-qt.png
         docs.path = $$INSTALLBASE/share/doc/$$TARGET/
-        docs.files += AUTHOR LICENSE README.md
+        docs.files += AUTHORS LICENSE README.md
         manuals.path = $$INSTALLBASE/share/doc/$$TARGET/manual/
         manuals.files += doc/dokumentasi.md
         manuals_img.path = $$INSTALLBASE/share/doc/$$TARGET/manual/gbr
-        manuals.files += doc/gbr/*
-	INSTALLS += target  dbtarget icons
+        manuals_img.files += doc/gbr/*
+	INSTALLS += target  dbtarget icons docs manuals manuals_img
 }
 
 
