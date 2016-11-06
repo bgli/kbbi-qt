@@ -67,9 +67,10 @@ unix {
 INSTALLBASE = /usr
 target.path = $$INSTALLBASE/bin
 doc.path = $$INSTALLBASE/data/$$TARGET/doc
+doc.files +=
 
 dbtarget.path = $$INSTALLBASE/share/$$TARGET/data
-dbtarget.files += KBBI.db
+dbtarget.files += $${PWD_SOURCE}/data/KBBI.db
 INSTALLS += target doc dbtarget
 }
 
