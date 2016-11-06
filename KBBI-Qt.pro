@@ -29,22 +29,22 @@ TARGET = KBBI-Qt
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp \
-    tentang.cpp
+SOURCES += src/main.cpp\
+        src/mainwindow.cpp \
+    src/tentang.cpp
 
-HEADERS  += mainwindow.h \
-    tentang.h
+HEADERS  += src/mainwindow.h \
+    src/tentang.h
 
-FORMS    += mainwindow.ui \
-    tentang.ui
+FORMS    += src/mainwindow.ui \
+    src/tentang.ui
 
 RESOURCES += \
-    resource.qrc
+    src/resource.qrc
 
 # hanya dicoba di output 32bit
 win32 {
-    RC_FILE += kbbi-qt.rc
+    RC_FILE += src/kbbi-qt.rc
     DB_FILE = KBBI.db
     PWD_SOURCE = $${PWD}
     PWD_SOURCE ~= s,/,\\,g
@@ -52,12 +52,12 @@ win32 {
     PWD_DEST ~= s,/,\\,g
 
     CONFIG(release, debug|release) {
-        QMAKE_POST_LINK += $$quote(${COPY} $${PWD_SOURCE}\\data\\$${DB_FILE} $${PWD_DEST}\\release\\)
+        QMAKE_POST_LINK += $$quote(${COPY} $${PWD_SOURCE}\\src\\data\\$${DB_FILE} $${PWD_DEST}\\release\\)
 #        QMAKE_CLEAN += $$quote(release\\$${DB_FILE})
     }
 
     CONFIG(debug, debug|release) {
-        QMAKE_POST_LINK += $$quote(${COPY} $${PWD_SOURCE}\\data\\$${DB_FILE} $${PWD_DEST}\\debug\\)
+        QMAKE_POST_LINK += $$quote(${COPY} $${PWD_SOURCE}\\src\\data\\$${DB_FILE} $${PWD_DEST}\\debug\\)
 #        QMAKE_CLEAN += $$quote(debug\\$${DB_FILE})
     }
 
@@ -67,9 +67,15 @@ unix {
 	INSTALLBASE = /usr
 	target.path = $$INSTALLBASE/bin
 	dbtarget.path = $$INSTALLBASE/share/$$TARGET/data
-	dbtarget.files = data/KBBI.db
+	dbtarget.files = src/data/KBBI.db
 	icons.path = $$INSTALLBASE/share/
-	icons.files = KBBI-qt.png
+	icons.files = src/KBBI-qt.png
+        docs.path = $$INSTALLBASE/share/doc/$$TARGET/
+        docs.files += AUTHOR LICENSE README.md
+        manuals.path = $$INSTALLBASE/share/doc/$$TARGET/manual/
+        manuals.files += doc/dokumentasi.md
+        manuals_img.path = $$INSTALLBASE/share/doc/$$TARGET/manual/gbr
+        manuals.files += doc/gbr/*
 	INSTALLS += target  dbtarget icons
 }
 

@@ -28,7 +28,12 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    QString dbPath = QDir::currentPath() + "/" + DB_NAME;
+    QString dbPath;
+    #ifdef Q_OS_WIN
+        dbPath = QDir::currentPath() + "/" + DB_NAME;
+    #else
+        dbPath = "/usr/share/data/kbbi-qt/" + DB_NAME;
+    #endif
 
     if(!QFile::exists(dbPath)) {
         QMessageBox::critical(0, "Database Galat", "Berkas database " + DB_NAME + " tidak ditemukan!");
