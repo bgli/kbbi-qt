@@ -29,13 +29,11 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow), autoCari(false)
 {
     ui->setupUi(this);
 
     ui->btnCari->hide();
-
-    connect(ui->actionTentang, SIGNAL(triggered()), this, SLOT(onActionTentangTriggered()));
 
     // Setup Signal and Slot cari
     connect(ui->btnCari,SIGNAL(clicked(bool)),this,SLOT(slotCariKata()));
@@ -68,7 +66,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->listView->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)), this, SLOT(pilihKata(QModelIndex)));
 
-    this->doSearch("");
+    this->searchQuery("");
 
     ui->statusBar->showMessage("Memulai...",1000);
 
@@ -100,11 +98,8 @@ void MainWindow::copyDBfromRes(){
     }
 }
 
-void MainWindow::doSearch(const QString& keyword)
+void MainWindow::searchQuery(QString keyword)
 {
-    if (keyword.size() <= 0)
-        return;
-
     // Bersihkan bekas pencarian
     kamusModel->clear();
     ui->detailResult->clear();
@@ -198,11 +193,12 @@ void MainWindow::modifyHtmlTag(QString &text)
 void MainWindow::slotCariKata()
 {
     QString keyword = ui->lineCari->text();
-    this->doSearch(keyword);
+    this->searchQuery(keyword);
 }
 
 void MainWindow::pilihKata(QModelIndex index)
 {
+
     QString resultText = kamusModel->data(index.sibling(index.row(),1)).toString();
 
     QTextDocument doc;
@@ -215,21 +211,27 @@ void MainWindow::pilihKata(QModelIndex index)
 }
 
 
-void MainWindow::onActionTentangTriggered()
+void MainWindow::on_actionTentang_triggered()
 {
     tentang tentang(this);
     tentang.exec();
 }
 
-void MainWindow::onCheckAutoCariToggled(bool checked)
+void MainWindow::on_checkAutoCari_clicked()
 {
-    if (checked)
-        connect(ui->lineCari, SIGNAL(textChanged(QString)), this, SLOT(doSearch(QString)));
-    else
-        disconnect(ui->lineCari, SIGNAL(textChanged(QString)), this, SLOT(doSearch(QString)));
+    autoCari = ui->checkAutoCari->isChecked();
+}
+
+void MainWindow::on_lineCari_textEdited(const QString &text)
+{
+    if(autoCari == false)
+        return;
+
+    searchQuery(text);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+
