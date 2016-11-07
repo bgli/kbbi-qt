@@ -25,7 +25,7 @@
   <property name="windowTitle">
    <string>Pedoman Umum Ejaan Bahasa Indonesia</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -39,7 +39,7 @@
      <widget class="QWebView" name="webView">
       <property name="url">
        <url>
-        <string>file:///home/rania/kbbi-qt_copy/src/data/puebi.html</string>
+        <string>file:///usr/share/doc/kbbi-qt/puebi.html</string>
        </url>
       </property>
      </widget>
