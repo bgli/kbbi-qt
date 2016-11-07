@@ -29,11 +29,13 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow), autoCari(false)
+    ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
     ui->btnCari->hide();
+
+    connect(ui->actionTentang, SIGNAL(triggered()), this, SLOT(onActionTentangTriggered()));
 
     // Setup Signal and Slot cari
     connect(ui->btnCari,SIGNAL(clicked(bool)),this,SLOT(slotCariKata()));
@@ -66,7 +68,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->listView->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)), this, SLOT(pilihKata(QModelIndex)));
 
-    this->searchQuery("");
+    this->doSearch("");
 
     ui->statusBar->showMessage("Memulai...",1000);
 
@@ -98,8 +100,11 @@ void MainWindow::copyDBfromRes(){
     }
 }
 
-void MainWindow::searchQuery(QString keyword)
+void MainWindow::doSearch(const QString& keyword)
 {
+    if (keyword.size() <= 0)
+        return;
+
     // Bersihkan bekas pencarian
     kamusModel->clear();
     ui->detailResult->clear();
@@ -193,12 +198,11 @@ void MainWindow::modifyHtmlTag(QString &text)
 void MainWindow::slotCariKata()
 {
     QString keyword = ui->lineCari->text();
-    this->searchQuery(keyword);
+    this->doSearch(keyword);
 }
 
 void MainWindow::pilihKata(QModelIndex index)
 {
-
     QString resultText = kamusModel->data(index.sibling(index.row(),1)).toString();
 
     QTextDocument doc;
@@ -211,27 +215,21 @@ void MainWindow::pilihKata(QModelIndex index)
 }
 
 
-void MainWindow::on_actionTentang_triggered()
+void MainWindow::onActionTentangTriggered()
 {
     tentang tentang(this);
     tentang.exec();
 }
 
-void MainWindow::on_checkAutoCari_clicked()
+void MainWindow::onCheckAutoCariToggled(bool checked)
 {
-    autoCari = ui->checkAutoCari->isChecked();
-}
-
-void MainWindow::on_lineCari_textEdited(const QString &text)
-{
-    if(autoCari == false)
-        return;
-
-    searchQuery(text);
+    if (checked)
+        connect(ui->lineCari, SIGNAL(textChanged(QString)), this, SLOT(doSearch(QString)));
+    else
+        disconnect(ui->lineCari, SIGNAL(textChanged(QString)), this, SLOT(doSearch(QString)));
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
