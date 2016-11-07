@@ -76,7 +76,9 @@ unix {
         manuals.files += doc/dokumentasi.md
         manuals_img.path = $$INSTALLBASE/share/doc/$$TARGET/manual/gbr
         manuals_img.files += doc/gbr/*
-	INSTALLS += target  dbtarget icons docs manuals manuals_img
+	desktop.path = $$INSTALLBASE/share/applications/
+	desktop.files = KBBI-Qt.desktop
+	INSTALLS += target  dbtarget icons docs manuals manuals_img desktop
 }
 
 
