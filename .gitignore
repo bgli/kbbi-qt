@@ -36,3 +36,7 @@ Makefile*
 # QtCtreator CMake
 CMakeLists.txt.user
 
+
+#others
+.gitignore
+*~
