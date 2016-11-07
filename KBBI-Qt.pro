@@ -68,7 +68,7 @@ unix {
 	target.path = $$INSTALLBASE/bin
 	dbtarget.path = $$INSTALLBASE/share/$$TARGET/data
 	dbtarget.files = src/data/KBBI.db
-	icons.path = $$INSTALLBASE/share/
+	icons.path = $$INSTALLBASE/share/pixmaps
 	icons.files = src/KBBI-qt.png
         docs.path = $$INSTALLBASE/share/doc/$$TARGET/
         docs.files += AUTHORS LICENSE README.md
