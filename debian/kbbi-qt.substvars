@@ -1,0 +1,3 @@
+shlibs:Depends=libc6 (>= 2.2.5), libgcc1 (>= 1:3.0), libgl1-mesa-glx | libgl1, libstdc++6 (>= 5)
+misc:Depends=
+misc:Pre-Depends=
