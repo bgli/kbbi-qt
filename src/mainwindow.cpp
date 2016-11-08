@@ -22,6 +22,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "tentang.h"
+#include "puebi.h"
 #include <QDebug>
 #include <QSqlQuery>
 #include <QFileInfo>
@@ -181,6 +182,12 @@ void MainWindow::on_actionTentang_triggered()
 {
     tentang tentang(this);
     tentang.exec();
+}
+
+void MainWindow::on_actionPUEBI_triggered()
+{
+    PUEBI mDialog;
+    mDialog.exec();
 }
 
 void MainWindow::on_checkAutoCari_clicked()
