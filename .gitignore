@@ -40,3 +40,5 @@ CMakeLists.txt.user
 #others
 .gitignore
 *~
+*.deb
+*.tar.xz
