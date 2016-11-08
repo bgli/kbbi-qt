@@ -1,0 +1,310 @@
+﻿@font-face {
+	font-family: 'Palatino_Linotype_TrueType_0';
+	src: local('Palatino_Linotype_TrueType_0');
+	src: url('Palatino_Linotype_TrueType_0.ttf') format('truetype');
+}
+
+.fmt-0{font-style:italic;font-weight:normal;font-family:Palatino_Linotype_TrueType_0,Palatino Linotype,serif;color:#000000;font-size:10pt;}
+
+@font-face {
+	font-family: 'Bookman_Old_Style_TrueType_1';
+	src: local('Bookman_Old_Style_TrueType_1');
+	src: url('Bookman_Old_Style_TrueType_1.ttf') format('truetype');
+}
+
+.fmt-1{font-style:normal;font-weight:bold;font-family:Bookman_Old_Style_TrueType_1,Bookman Old Style,serif;color:#000000;font-size:12pt;}
+
+.fmt-2{font-style:normal;font-weight:bold;font-family:Bookman_Old_Style_TrueType_1,Bookman Old Style,serif;color:#000000;font-size:10pt;}
+
+.fmt-3{font-style:normal;font-weight:bold;font-family:Bookman_Old_Style_TrueType_1,Bookman Old Style,serif;color:#000000;font-size:11pt;}
+
+@font-face {
+	font-family: 'Bookman_Old_Style_TrueType_2';
+	src: local('Bookman_Old_Style_TrueType_2');
+	src: url('Bookman_Old_Style_TrueType_2.ttf') format('truetype');
+}
+
+.fmt-4{font-style:normal;font-weight:normal;font-family:Bookman_Old_Style_TrueType_2,Bookman Old Style,serif;color:#000000;font-size:9pt;}
+
+.fmt-5{font-style:normal;font-weight:bold;font-family:Bookman_Old_Style_TrueType_1,Bookman Old Style,serif;color:#000000;font-size:9pt;}
+
+@font-face {
+	font-family: 'Bookman_Old_Style_TrueType_3';
+	src: local('Bookman_Old_Style_TrueType_3');
+	src: url('Bookman_Old_Style_TrueType_3.ttf') format('truetype');
+}
+
+.fmt-6{font-style:italic;font-weight:normal;font-family:Bookman_Old_Style_TrueType_3,Bookman Old Style,serif;color:#000000;font-size:9pt;}
+
+@font-face {
+	font-family: 'Bookman_Old_Style_Type0_4';
+	src: local('Bookman_Old_Style_Type0_4');
+	src: url('Bookman_Old_Style_Type0_4.otf') format('opentype');
+}
+
+.fmt-7{font-style:normal;font-weight:normal;font-family:Bookman_Old_Style_Type0_4,Bookman Old Style,serif;color:#000000;font-size:9pt;}
+
+.fmt-8{font-style:normal;font-weight:normal;font-family:Bookman_Old_Style_TrueType_2,Bookman Old Style,serif;color:#000000;font-size:8pt;}
+
+.fmt-9{font-style:normal;font-weight:normal;font-family:Bookman_Old_Style_Type0_4,Bookman Old Style,serif;color:#000000;font-size:8pt;}
+
+@font-face {
+	font-family: 'Calibri_TrueType_5';
+	src: local('Calibri_TrueType_5');
+	src: url('Calibri_TrueType_5.ttf') format('truetype');
+}
+
+.fmt-10{font-style:normal;font-weight:normal;font-family:Calibri_TrueType_5,Calibri,serif;color:#000000;font-size:8pt;}
+
+@font-face {
+	font-family: 'Palatino_Linotype_TrueType_6';
+	src: local('Palatino_Linotype_TrueType_6');
+	src: url('Palatino_Linotype_TrueType_6.ttf') format('truetype');
+}
+
+.fmt-11{font-style:normal;font-weight:normal;font-family:Palatino_Linotype_TrueType_6,Palatino Linotype,serif;color:#000000;font-size:10pt;}
+
+.fmt-12{font-style:normal;font-weight:normal;font-family:Bookman_Old_Style_TrueType_2,Bookman Old Style,serif;color:#000000;font-size:10pt;}
+
+.fmt-13{font-style:italic;font-weight:normal;font-family:Bookman_Old_Style_TrueType_3,Bookman Old Style,serif;color:#000000;font-size:10pt;}
+
+.fmt-14{font-style:normal;font-weight:normal;font-family:Palatino_Linotype_TrueType_6,Palatino Linotype,serif;color:#000000;font-size:9pt;}
+
+.fmt-15{font-style:normal;font-weight:normal;font-family:Calibri_TrueType_5,Calibri,serif;color:#000000;font-size:9pt;}
+
+.fmt-16{font-style:normal;font-weight:bold;font-family:Bookman_Old_Style_TrueType_1,Bookman Old Style,serif;color:#000000;font-size:14pt;}
+
+.fmt-17{font-style:normal;font-weight:normal;font-family:Bookman_Old_Style_Type0_4,Bookman Old Style,serif;color:#000000;font-size:10pt;}
+
+.fmt-18{font-style:normal;font-weight:normal;font-family:Bookman_Old_Style_TrueType_2,Bookman Old Style,serif;color:#0000ff;font-size:10pt;}
+
+@font-face {
+	font-family: 'Calibri_TrueType_7';
+	src: local('Calibri_TrueType_7');
+	src: url('Calibri_TrueType_7.ttf') format('truetype');
+}
+
+.fmt-19{font-style:normal;font-weight:bold;font-family:Calibri_TrueType_7,Calibri,serif;color:#000000;font-size:10pt;}
+
+.fmt-20{font-style:normal;font-weight:normal;font-family:Bookman_Old_Style_TrueType_2,Bookman Old Style,serif;color:#000000;font-size:12pt;}
+
+@font-face {
+	font-family: 'Arial_Unicode_MS_TrueType_8';
+	src: local('Arial_Unicode_MS_TrueType_8');
+	src: url('Arial_Unicode_MS_TrueType_8.ttf') format('truetype');
+}
+
+.fmt-21{font-style:normal;font-weight:normal;font-family:Arial_Unicode_MS_TrueType_8,Arial Unicode MS,serif;color:#000000;font-size:10pt;}
+
+.fmt-22{font-style:normal;font-weight:normal;font-family:Bookman_Old_Style_Type0_4,Bookman Old Style,serif;color:#000000;font-size:12pt;}
+
+@font-face {
+	font-family: 'Times_New_Roman_TrueType_9';
+	src: local('Times_New_Roman_TrueType_9');
+	src: url('Times_New_Roman_TrueType_9.ttf') format('truetype');
+}
+
+.fmt-23{font-style:normal;font-weight:bold;font-family:Times_New_Roman_TrueType_9,Times New Roman,serif;color:#000000;font-size:10pt;}
+
+.fmt-24{font-style:normal;font-weight:normal;font-family:Calibri_TrueType_5,Calibri,serif;color:#000000;font-size:10pt;}
+
+@font-face {
+	font-family: 'Times_New_Roman_TrueType_10';
+	src: local('Times_New_Roman_TrueType_10');
+	src: url('Times_New_Roman_TrueType_10.ttf') format('truetype');
+}
+
+.fmt-25{font-style:normal;font-weight:normal;font-family:Times_New_Roman_TrueType_10,Times New Roman,serif;color:#000000;font-size:10pt;}
+
+@font-face {
+	font-family: 'Times_New_Roman_Type0_11';
+	src: local('Times_New_Roman_Type0_11');
+	src: url('Times_New_Roman_Type0_11.otf') format('opentype');
+}
+
+.fmt-26{font-style:normal;font-weight:normal;font-family:Times_New_Roman_Type0_11,Times New Roman,serif;color:#000000;font-size:10pt;}
+
+@font-face {
+	font-family: 'Times_New_Roman_TrueType_12';
+	src: local('Times_New_Roman_TrueType_12');
+	src: url('Times_New_Roman_TrueType_12.ttf') format('truetype');
+}
+
+.fmt-27{font-style:italic;font-weight:normal;font-family:Times_New_Roman_TrueType_12,Times New Roman,serif;color:#000000;font-size:10pt;}
+
+.fmt-28{font-style:normal;font-weight:normal;font-family:Bookman_Old_Style_TrueType_2,Bookman Old Style,serif;color:#000000;font-size:10pt;}
+
+.fmt-29{font-style:normal;font-weight:normal;font-family:Bookman_Old_Style_Type0_4,Bookman Old Style,serif;color:#000000;font-size:10pt;}
+
+.fmt-30{font-style:italic;font-weight:normal;font-family:Bookman_Old_Style_TrueType_3,Bookman Old Style,serif;color:#000000;font-size:10pt;}
+
+.fmt-31{font-style:normal;font-weight:bold;font-family:Bookman_Old_Style_TrueType_1,Bookman Old Style,serif;color:#000000;font-size:10pt;}
+
+.fmt-32{font-style:normal;font-weight:bold;font-family:Calibri_TrueType_7,Calibri,serif;color:#000000;font-size:10pt;}
+
+@font-face {
+	font-family: 'Bookman_Old_Style_TrueType_13';
+	src: local('Bookman_Old_Style_TrueType_13');
+	src: url('Bookman_Old_Style_TrueType_13.ttf') format('truetype');
+}
+
+.fmt-33{font-style:italic;font-weight:bold;font-family:Bookman_Old_Style_TrueType_13,Bookman Old Style,serif;color:#000000;font-size:10pt;}
+
+@font-face {
+	font-family: 'Symbol_Type0_14';
+	src: local('Symbol_Type0_14');
+	src: url('Symbol_Type0_14.otf') format('opentype');
+}
+
+.fmt-34{font-style:normal;font-weight:normal;font-family:Symbol_Type0_14,Symbol,serif;color:#000000;font-size:10pt;}
+
+.fmt-35{font-style:normal;font-weight:normal;font-family:Times_New_Roman_TrueType_10,Times New Roman,serif;color:#000000;font-size:10.2pt;}
+
+.fmt-36{font-style:normal;font-weight:normal;font-family:Bookman_Old_Style_TrueType_2,Bookman Old Style,serif;color:#000000;font-size:10.2pt;}
+
+.fmt-37{font-style:normal;font-weight:normal;font-family:Times_New_Roman_TrueType_10,Times New Roman,serif;color:#000000;font-size:10.2pt;}
+
+.fmt-38{font-style:normal;font-weight:normal;font-family:Bookman_Old_Style_TrueType_2,Bookman Old Style,serif;color:#000000;font-size:10.2pt;}
+
+@font-face {
+	font-family: 'Calibri_TrueType_15';
+	src: local('Calibri_TrueType_15');
+	src: url('Calibri_TrueType_15.ttf') format('truetype');
+}
+
+.fmt-39{font-style:italic;font-weight:normal;font-family:Calibri_TrueType_15,Calibri,serif;color:#000000;font-size:10pt;}
+
+@font-face {
+	font-family: 'Calibri_Type0_16';
+	src: local('Calibri_Type0_16');
+	src: url('Calibri_Type0_16.otf') format('opentype');
+}
+
+.fmt-40{font-style:normal;font-weight:normal;font-family:Calibri_Type0_16,Calibri,serif;color:#000000;font-size:10pt;}
+
+.fmt-41{font-style:normal;font-weight:normal;font-family:Bookman_Old_Style_TrueType_2,Bookman Old Style,serif;color:#000000;font-size:5.83pt;}
+
+@font-face {
+	font-family: 'Arial_Unicode_MS_Type0_17';
+	src: local('Arial_Unicode_MS_Type0_17');
+	src: url('Arial_Unicode_MS_Type0_17.otf') format('opentype');
+}
+
+.fmt-42{font-style:normal;font-weight:normal;font-family:Arial_Unicode_MS_Type0_17,Arial Unicode MS,serif;color:#000000;font-size:10pt;}
+
+@font-face {
+	font-family: 'Cambria_Math_Type0_18';
+	src: local('Cambria_Math_Type0_18');
+	src: url('Cambria_Math_Type0_18.otf') format('opentype');
+}
+
+.fmt-43{font-style:normal;font-weight:normal;font-family:Cambria_Math_Type0_18,Cambria Math,serif;color:#000000;font-size:10pt;}
+
+.fmt-44{font-style:normal;font-weight:normal;font-family:Calibri_Type0_16,Calibri,serif;color:#000000;font-size:11pt;}
+
+.fmt-45{font-style:normal;font-weight:normal;font-family:Arial_Unicode_MS_Type0_17,Arial Unicode MS,serif;color:#000000;font-size:9.328pt;}
+
+.fmt-46{font-style:normal;font-weight:normal;font-family:Cambria_Math_Type0_18,Cambria Math,serif;color:#000000;font-size:9.328pt;}
+
+.fmt-47{font-style:normal;font-weight:normal;font-family:Bookman_Old_Style_TrueType_2,Bookman Old Style,serif;color:#000000;font-size:9.328pt;}
+
+.fmt-48{font-style:normal;font-weight:normal;font-family:Bookman_Old_Style_TrueType_2,Bookman Old Style,serif;color:#000000;font-size:8.162pt;}
+
+.fmt-49{font-style:normal;font-weight:normal;font-family:Bookman_Old_Style_Type0_4,Bookman Old Style,serif;color:#000000;font-size:9.328pt;}
+
+@font-face {
+	font-family: 'Courier_New_Type0_19';
+	src: local('Courier_New_Type0_19');
+	src: url('Courier_New_Type0_19.otf') format('opentype');
+}
+
+.fmt-50{font-style:normal;font-weight:normal;font-family:Courier_New_Type0_19,Courier New,serif;color:#000000;font-size:10pt;}
+
+@font-face {
+	font-family: 'Times_New_Roman_Type0_20';
+	src: local('Times_New_Roman_Type0_20');
+	src: url('Times_New_Roman_Type0_20.otf') format('opentype');
+}
+
+.fmt-51{font-style:italic;font-weight:normal;font-family:Times_New_Roman_Type0_20,Times New Roman,serif;color:#000000;font-size:10pt;}
+
+@font-face {
+	font-family: 'Times_New_Roman_Type0_21';
+	src: local('Times_New_Roman_Type0_21');
+	src: url('Times_New_Roman_Type0_21.otf') format('opentype');
+}
+
+.fmt-52{font-style:italic;font-weight:bold;font-family:Times_New_Roman_Type0_21,Times New Roman,serif;color:#000000;font-size:10pt;}
+
+@font-face {
+	font-family: 'Bookman_Old_Style_Type0_22';
+	src: local('Bookman_Old_Style_Type0_22');
+	src: url('Bookman_Old_Style_Type0_22.otf') format('opentype');
+}
+
+.fmt-53{font-style:italic;font-weight:normal;font-family:Bookman_Old_Style_Type0_22,Bookman Old Style,serif;color:#000000;font-size:10pt;}
+
+@font-face {
+	font-family: 'Arial_Type0_23';
+	src: local('Arial_Type0_23');
+	src: url('Arial_Type0_23.otf') format('opentype');
+}
+
+.fmt-54{font-style:italic;font-weight:normal;font-family:Arial_Type0_23,Arial,serif;color:#000000;font-size:10pt;}
+
+@font-face {
+	font-family: 'Arial_Type0_24';
+	src: local('Arial_Type0_24');
+	src: url('Arial_Type0_24.otf') format('opentype');
+}
+
+.fmt-55{font-style:italic;font-weight:bold;font-family:Arial_Type0_24,Arial,serif;color:#000000;font-size:10pt;}
+
+@font-face {
+	font-family: 'Times_New_Roman_Type0_25';
+	src: local('Times_New_Roman_Type0_25');
+	src: url('Times_New_Roman_Type0_25.otf') format('opentype');
+}
+
+.fmt-56{font-style:normal;font-weight:bold;font-family:Times_New_Roman_Type0_25,Times New Roman,serif;color:#000000;font-size:10pt;}
+
+@font-face {
+	font-family: 'Simplified_Arabic_Fixed_Type0_26';
+	src: local('Simplified_Arabic_Fixed_Type0_26');
+	src: url('Simplified_Arabic_Fixed_Type0_26.otf') format('opentype');
+}
+
+.fmt-57{font-style:normal;font-weight:normal;font-family:Simplified_Arabic_Fixed_Type0_26,Simplified Arabic Fixed,serif;color:#000000;font-size:10pt;}
+
+@font-face {
+	font-family: 'Simplified_Arabic_Fixed_TrueType_27';
+	src: local('Simplified_Arabic_Fixed_TrueType_27');
+	src: url('Simplified_Arabic_Fixed_TrueType_27.ttf') format('truetype');
+}
+
+.fmt-58{font-style:normal;font-weight:normal;font-family:Simplified_Arabic_Fixed_TrueType_27,Simplified Arabic Fixed,serif;color:#000000;font-size:10pt;}
+
+@font-face {
+	font-family: 'Bookman_Old_Style_Type0_28';
+	src: local('Bookman_Old_Style_Type0_28');
+	src: url('Bookman_Old_Style_Type0_28.otf') format('opentype');
+}
+
+.fmt-59{font-style:italic;font-weight:bold;font-family:Bookman_Old_Style_Type0_28,Bookman Old Style,serif;color:#000000;font-size:10pt;}
+
+@font-face {
+	font-family: 'Times_New_Roman_Type1_29';
+	src: local('Times_New_Roman_Type1_29');
+	src: url('Times_New_Roman_Type1_29.otf') format('opentype');
+}
+
+.fmt-60{font-style:normal;font-weight:normal;font-family:Times_New_Roman_Type1_29,Times New Roman,serif;color:#000000;font-size:12pt;}
+
+@font-face {
+	font-family: 'Palatino_Linotype_TrueType_30';
+	src: local('Palatino_Linotype_TrueType_30');
+	src: url('Palatino_Linotype_TrueType_30.ttf') format('truetype');
+}
+
+.fmt-61{font-style:normal;font-weight:bold;font-family:Palatino_Linotype_TrueType_30,Palatino Linotype,serif;color:#000000;font-size:14pt;}
+

@@ -145,7 +145,14 @@ p, li { white-space: pre-wrap; }
     <addaction name="separator"/>
     <addaction name="actionKeluar"/>
    </widget>
+   <widget class="QMenu" name="menuEkstra">
+    <property name="title">
+     <string>Ekstra</string>
+    </property>
+    <addaction name="actionPUEBI"/>
+   </widget>
    <addaction name="menuFIle"/>
+   <addaction name="menuEkstra"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionBantuan">
@@ -161,6 +168,11 @@ p, li { white-space: pre-wrap; }
   <action name="actionKeluar">
    <property name="text">
     <string>Keluar</string>
+   </property>
+  </action>
+  <action name="actionPUEBI">
+   <property name="text">
+    <string>PUEBI</string>
    </property>
   </action>
  </widget>

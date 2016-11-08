@@ -22,6 +22,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "tentang.h"
+#include "puebi.h"
 #include <QDebug>
 #include <QSqlQuery>
 #include <QFileInfo>
@@ -43,22 +44,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->listView,SIGNAL(clicked(QModelIndex)),this,SLOT(pilihKata(QModelIndex)));
 
     // Init Database
-    QString     mNamaDb = "KBBI.db";
-    QFileInfo   mFileDb(mNamaDb);
-
-    // Chek File DB
-    if(!mFileDb.exists()){
-
-        // Copy file dari resource jika database belum ada
-        this->copyDBfromRes();
-
-    }
-
-    // Connect to DB
-    database = QSqlDatabase::addDatabase("QSQLITE");
-    database.setDatabaseName("KBBI.db");
-    database.open();
-
+    database = QSqlDatabase::database();
 
     // Setup Query Model
     kamusModel = new QSqlQueryModel(this);
@@ -70,32 +56,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->statusBar->showMessage("Memulai...",1000);
 
-}
-
-
-void MainWindow::copyDBfromRes(){
-
-    // Nama File output copy
-    // Tanpa full absolute path supaya diletakkan satu level
-    // di direktori yang sama dengan file aplikasi
-    QString fileOut = "KBBI.db";
-
-    // Copy File dari Resource File
-    if(QFile::copy(":/data/KBBI.db",fileOut)){
-
-        // Jika berhasil dicopy, set permisson supaya bisa di read
-        QFile dbFile(fileOut);
-        dbFile.setPermissions(QFile::ReadUser);
-
-        // qDebug()<<"Berkas basis data berhasil disalin dari resource";
-        ui->statusBar->showMessage("Berkas basis data berhasil disalin dari resource",5000);
-
-    }else{
-
-        // qDebug()<<"Gagal menyalin berkas dari file resource";
-        ui->statusBar->showMessage("Gagal menyalin berkas dari file resource",5000);
-
-    }
 }
 
 void MainWindow::searchQuery(QString keyword)
@@ -215,6 +175,12 @@ void MainWindow::on_actionTentang_triggered()
 {
     tentang tentang(this);
     tentang.exec();
+}
+
+void MainWindow::on_actionPUEBI_triggered()
+{
+    PUEBI mDialog;
+    mDialog.exec();
 }
 
 void MainWindow::on_checkAutoCari_clicked()
