@@ -1,6 +1,5 @@
 #include "puebi.h"
 #include "ui_puebi.h"
-#include <QtWebKitWidgets/QWebView>
 
 PUEBI::PUEBI(QWidget *parent) :
     QDialog(parent),
