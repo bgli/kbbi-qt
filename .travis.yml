@@ -13,4 +13,5 @@ script:
   - source /opt/qt55/bin/qt55-env.sh
   - /opt/qt55/bin/qmake -project
   - /opt/qt55/bin/qmake KBBI-Qt.pro
+  - sed -i 's/QtWebKit/QtWebKitWidgets/g' ui_puebi.h
   - make
