@@ -6,6 +6,7 @@ PUEBI::PUEBI(QWidget *parent) :
     ui(new Ui::PUEBI)
 {
     ui->setupUi(this);
+    ui->webView->setUrl(QUrl("file:///usr/share/KBBI-Qt/data/puebi.html"));
 }
 
 PUEBI::~PUEBI()
