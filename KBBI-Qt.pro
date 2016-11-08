@@ -21,7 +21,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql
+QT       += core gui sql network webkit webkitwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -31,13 +31,16 @@ TEMPLATE = app
 
 SOURCES += src/main.cpp\
         src/mainwindow.cpp \
-    src/tentang.cpp
+    src/tentang.cpp \
+    src/puebi.cpp
 
 HEADERS  += src/mainwindow.h \
-    src/tentang.h
+    src/tentang.h \
+    src/puebi.h
 
 FORMS    += src/mainwindow.ui \
-    src/tentang.ui
+    src/tentang.ui \
+    src/puebi.ui
 
 RESOURCES += \
     src/resource.qrc
@@ -67,7 +70,9 @@ unix {
 	INSTALLBASE = /usr
 	target.path = $$INSTALLBASE/bin
 	dbtarget.path = $$INSTALLBASE/share/$$TARGET/data
-	dbtarget.files = src/data/KBBI.db
+	dbtarget.files += src/data/KBBI.db src/data/*.html
+	htmlresources.path = $$INSTALLBASE/share/$$TARGET/data/uB5I0d8t
+        htmlresources.files += src/data/uB5I0d8t/*
 	icons.path = $$INSTALLBASE/share/pixmaps
 	icons.files = src/KBBI-qt.png
         docs.path = $$INSTALLBASE/share/doc/$$TARGET/
@@ -78,7 +83,5 @@ unix {
         manuals_img.files += doc/gbr/*
 	desktop.path = $$INSTALLBASE/share/applications/
 	desktop.files = KBBI-Qt.desktop
-	INSTALLS += target  dbtarget icons docs manuals manuals_img desktop
+	INSTALLS += target  dbtarget icons docs manuals manuals_img desktop htmlresources
 }
-
-
