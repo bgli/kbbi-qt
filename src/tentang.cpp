@@ -21,12 +21,57 @@
 */
 #include "tentang.h"
 #include "ui_tentang.h"
+#include <QDebug>
+#include <QDesktopServices>
 
 tentang::tentang(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::tentang)
 {
     ui->setupUi(this);
+
+    connect(ui->listWidget,SIGNAL(clicked(QModelIndex)),this,SLOT(onContributorItemClicked(QModelIndex)));
+}
+
+void tentang::onContributorItemClicked(QModelIndex index){
+    int contribIndex = index.row();
+
+    switch (contribIndex) {
+    case 0:
+        this->openGithub("antosamalona");
+        break;
+    case 1:
+        this->openGithub("azispratama92");
+        break;
+    case 2:
+        this->openGithub("as3mbus");
+        break;
+    case 3:
+        this->openGithub("saa7go");
+        break;
+    case 4:
+        this->openGithub("hahn");
+        break;
+    case 5:
+        this->openGithub("alunux");
+        break;
+    case 6:
+        this->openGithub("rafeyu");
+        break;
+    case 7:
+        this->openGithub("raniaamina");
+        break;
+    case 8:
+        this->openGithub("showcheap");
+        break;
+    default:
+        qDebug()<<"Default";
+        break;
+    }
+}
+
+void tentang::openGithub(QString username){
+    QDesktopServices::openUrl(QUrl("https://github.com/"+username));
 }
 
 tentang::~tentang()

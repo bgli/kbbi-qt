@@ -23,6 +23,7 @@
 #define TENTANG_H
 
 #include <QDialog>
+#include <QModelIndex>
 
 namespace Ui {
 class tentang;
@@ -38,6 +39,10 @@ public:
 
 private:
     Ui::tentang *ui;
+    void openGithub(QString username);
+
+private slots:
+    void onContributorItemClicked(QModelIndex index);
 };
 
 #endif // tentang_H
