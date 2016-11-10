@@ -28,10 +28,7 @@
 #include <QDesktopServices>
 #include <QApplication>
 #include <QDesktopWidget>
-
-#ifdef Q_OS_WIN
 #include <QDir>
-#endif
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -191,12 +188,12 @@ void MainWindow::on_actionTentang_triggered()
 void MainWindow::on_actionPUEBI_triggered()
 {
     QString puebiPath;
-#ifdef Q_OS_WIN
-    puebiPath = "file:///" + QDir::currentPath() + "/data" + "/puebi.html";
-    qDebug() << puebiPath;
-#else
+#ifdef Q_OS_LINUX
     puebiPath = "file:///usr/share/KBBI-Qt/data/puebi.html";
+#else
+    puebiPath = "file:///" + QDir::currentPath() + "/data" + "/puebi.html";
 #endif
+
     QDesktopServices::openUrl(QUrl(puebiPath));
 }
 
