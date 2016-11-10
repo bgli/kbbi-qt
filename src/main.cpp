@@ -29,10 +29,10 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     QString dbPath;
-    #ifdef Q_OS_WIN
-        dbPath = QDir::currentPath() + "/" + DB_NAME;
-    #else
+    #ifdef Q_OS_LINUX
         dbPath = "/usr/share/KBBI-Qt/data/" + DB_NAME;
+    #else
+        dbPath = QDir::currentPath() + "/" + DB_NAME;
     #endif
 
     if(!QFile::exists(dbPath)) {
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
         QSqlQuery testquery;
         if(testquery.exec("SELECT COUNT(_id) AS JUMLAH FROM datakata")){
             if(testquery.next()) {
-                if(testquery.value(0).toInt() != 35969) {
+                if(testquery.value(0).toInt() <= 0) {
                     QMessageBox::critical(0, "Database Galat", "Database tidak valid!");
                     return 1;
                 }
