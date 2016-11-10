@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
         QSqlQuery testquery;
         if(testquery.exec("SELECT COUNT(_id) AS JUMLAH FROM datakata")){
             if(testquery.next()) {
-                if(testquery.value(0).toInt() != 35969) {
+                if(testquery.value(0).toInt() <= 0) {
                     QMessageBox::critical(0, "Database Galat", "Database tidak valid!");
                     return 1;
                 }
