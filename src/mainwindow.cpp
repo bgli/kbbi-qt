@@ -26,6 +26,8 @@
 #include <QSqlQuery>
 #include <QFileInfo>
 #include <QDesktopServices>
+#include <QApplication>
+#include <QDesktopWidget>
 
 #ifdef Q_OS_WIN
 #include <QDir>
@@ -59,6 +61,12 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->statusBar->showMessage("Memulai...",1000);
 
+    // atur window ke tengah
+    QDesktopWidget *desktopWidget = qApp->desktop();
+    int x_pos, y_pos;
+    y_pos = (desktopWidget->rect().height() - rect().height())/2;
+    x_pos = (desktopWidget->rect().width() - rect().width())/2;
+    setGeometry(x_pos, y_pos, width(), height());
 }
 
 void MainWindow::searchQuery(QString keyword)

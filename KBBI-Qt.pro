@@ -37,8 +37,7 @@ HEADERS  += src/mainwindow.h \
     src/tentang.h
 
 FORMS    += src/mainwindow.ui \
-    src/tentang.ui \
-    src/puebi.ui
+    src/tentang.ui
 
 RESOURCES += \
     src/resource.qrc
