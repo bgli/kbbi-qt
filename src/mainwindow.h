@@ -26,6 +26,7 @@
 #include <QSqlDatabase>
 #include <QSqlQueryModel>
 
+const QString DB_NAME = "KBBI.db";
 
 namespace Ui {
 class MainWindow;
@@ -45,6 +46,8 @@ private slots:
 
     void on_actionTentang_triggered();
 
+    void on_actionPUEBI_triggered();
+
     void on_checkAutoCari_clicked();
 
     void on_lineCari_textEdited(const QString &text);
@@ -56,7 +59,6 @@ private:
     bool autoCari;
 
     // Action
-    void copyDBfromRes();
     void searchQuery(QString keyword);
     void modifyHtmlTag(QString & text);
 
