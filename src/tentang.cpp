@@ -30,7 +30,7 @@ tentang::tentang(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    connect(ui->listWidget,SIGNAL(clicked(QModelIndex)),this,SLOT(onContributorItemClicked(QModelIndex)));
+    connect(ui->listWidget,SIGNAL(doubleClicked(QModelIndex)),this,SLOT(onContributorItemClicked(QModelIndex)));
 }
 
 void tentang::onContributorItemClicked(QModelIndex index){
