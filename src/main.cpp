@@ -29,10 +29,10 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     QString dbPath;
-    #ifdef Q_OS_WIN
-        dbPath = QDir::currentPath() + "/" + DB_NAME;
-    #else
+    #ifdef Q_OS_LINUX
         dbPath = "/usr/share/KBBI-Qt/data/" + DB_NAME;
+    #else
+        dbPath = QDir::currentPath() + "/" + DB_NAME;
     #endif
 
     if(!QFile::exists(dbPath)) {
