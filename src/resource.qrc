@@ -1,10 +1,5 @@
 <RCC>
     <qresource prefix="/">
         <file>kbbi-qt.png</file>
-<<<<<<< HEAD
-        <file>data/KBBI.db</file>
-        <file>data/puebi.html</file>
-=======
->>>>>>> 0eec0d56b92d42b41c427a2f6a3bd3924bc57f1f
     </qresource>
 </RCC>
