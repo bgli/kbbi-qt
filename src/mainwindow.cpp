@@ -26,7 +26,10 @@
 #include <QDebug>
 #include <QSqlQuery>
 #include <QFileInfo>
-
+#include <QDesktopServices>
+#include <QApplication>
+#include <QDesktopWidget>
+#include <QDir>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -44,22 +47,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->listView,SIGNAL(clicked(QModelIndex)),this,SLOT(pilihKata(QModelIndex)));
 
     // Init Database
-    QString     mNamaDb = "KBBI.db";
-    QFileInfo   mFileDb(mNamaDb);
-
-    // Chek File DB
-    if(!mFileDb.exists()){
-
-        // Copy file dari resource jika database belum ada
-        this->copyDBfromRes();
-
-    }
-
-    // Connect to DB
-    database = QSqlDatabase::addDatabase("QSQLITE");
-    database.setDatabaseName("KBBI.db");
-    database.open();
-
+    database = QSqlDatabase::database();
 
     // Setup Query Model
     kamusModel = new QSqlQueryModel(this);
@@ -71,32 +59,12 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->statusBar->showMessage("Memulai...",1000);
 
-}
-
-
-void MainWindow::copyDBfromRes(){
-
-    // Nama File output copy
-    // Tanpa full absolute path supaya diletakkan satu level
-    // di direktori yang sama dengan file aplikasi
-    QString fileOut = "KBBI.db";
-
-    // Copy File dari Resource File
-    if(QFile::copy(":/data/KBBI.db",fileOut)){
-
-        // Jika berhasil dicopy, set permisson supaya bisa di read
-        QFile dbFile(fileOut);
-        dbFile.setPermissions(QFile::ReadUser);
-
-        // qDebug()<<"Berkas basis data berhasil disalin dari resource";
-        ui->statusBar->showMessage("Berkas basis data berhasil disalin dari resource",5000);
-
-    }else{
-
-        // qDebug()<<"Gagal menyalin berkas dari file resource";
-        ui->statusBar->showMessage("Gagal menyalin berkas dari file resource",5000);
-
-    }
+    // atur window ke tengah
+    QDesktopWidget *desktopWidget = qApp->desktop();
+    int x_pos, y_pos;
+    y_pos = (desktopWidget->rect().height() - rect().height())/2;
+    x_pos = (desktopWidget->rect().width() - rect().width())/2;
+    setGeometry(x_pos, y_pos, width(), height());
 }
 
 void MainWindow::searchQuery(QString keyword)
@@ -220,8 +188,19 @@ void MainWindow::on_actionTentang_triggered()
 
 void MainWindow::on_actionPUEBI_triggered()
 {
+<<<<<<< HEAD
     PUEBI mDialog;
     mDialog.exec();
+=======
+    QString puebiPath;
+#ifdef Q_OS_LINUX
+    puebiPath = "file:///usr/share/KBBI-Qt/data/puebi.html";
+#else
+    puebiPath = "file:///" + QDir::currentPath() + "/data" + "/puebi.html";
+#endif
+
+    QDesktopServices::openUrl(QUrl(puebiPath));
+>>>>>>> 0eec0d56b92d42b41c427a2f6a3bd3924bc57f1f
 }
 
 void MainWindow::on_checkAutoCari_clicked()
