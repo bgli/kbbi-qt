@@ -22,6 +22,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "tentang.h"
+#include "puebi.h"
 #include <QDebug>
 #include <QSqlQuery>
 #include <QFileInfo>
@@ -188,6 +189,10 @@ void MainWindow::on_actionTentang_triggered()
 
 void MainWindow::on_actionPUEBI_triggered()
 {
+<<<<<<< HEAD
+    PUEBI mDialog;
+    mDialog.exec();
+=======
     QString puebiPath;
 #ifdef Q_OS_LINUX
     puebiPath = "file:///usr/share/KBBI-Qt/data/puebi.html";
@@ -196,6 +201,7 @@ void MainWindow::on_actionPUEBI_triggered()
 #endif
 
     QDesktopServices::openUrl(QUrl(puebiPath));
+>>>>>>> 0eec0d56b92d42b41c427a2f6a3bd3924bc57f1f
 }
 
 void MainWindow::on_checkAutoCari_clicked()
