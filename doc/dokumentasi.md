@@ -10,7 +10,7 @@ Badan Pengembangan dan Pembinaan Bahasa (Badan Bahasa) serta Kementerian Pendidi
 KBBI-Qt ingin memastikan bahwa pengguna dapat mengakses KBBI dalam keadaan luring melalui komputer atau laptop. Sebagai tambahan, KBBI-Qt juga membawa PUEBI (Pedoman Umum Ejaan Bahasa Indonesia) yang bisa diakses melalui menu Ekstra pada *menu bar* (lihat poin 4.4).
 
 # 2. Pemasangan KBBI-Qt
-Beberapa kontributor telah memaketkan aplikasi KBBI-Qt untuk CentOS/RHEL7, Fedora, dan Debian beserta turunannya. Berikut cara instal melalui distro tersebut, ditambah cara instal dari *source code* (*compile* manual).
+Beberapa kontributor telah memaketkan aplikasi KBBI-Qt untuk CentOS/RHEL7, Fedora, Arch Linux, dan Debian beserta turunannya. Berikut cara instal melalui distro tersebut, ditambah cara instal dari *source code* (*compile* manual).
 
 ## 2.1 Di CentOS/RHEL7
     $ sudo wget https://copr.fedorainfracloud.org/coprs/alunux/kbbi-qt-git/repo/epel-7/alunux-kbbi-qt-git-epel-7.repo -O /etc/yum.repos.d/kbbi-qt.repo
@@ -24,7 +24,10 @@ Beberapa kontributor telah memaketkan aplikasi KBBI-Qt untuk CentOS/RHEL7, Fedor
     $ wget https://github.com/bgli/kbbi-qt/releases/download/v1.0-alpha/kbbi-qt_1.0.0-alpha-1_amd64.1.deb
     $ sudo dpkg -i kbbi-qt_1.0.0-alpha-1_amd64.deb
 
-## 2.4 Instal dari source code
+## 2.4 Arch Linux
+    $ yaourt -S kbbi-qt
+
+## 2.5 Instal dari source code
 Untuk melakukan kompilasi, pastikan sistem operasi Anda sudah memiliki **GCC dengan dukungan C++**, **Qt5**, dan **qmake (qtchooser)**.
 
     $ git clone https://github.com/bgli/kbbi-qt.git
