@@ -26,6 +26,10 @@ Beberapa kontributor telah memaketkan aplikasi KBBI-Qt untuk CentOS/RHEL7, Fedor
 
 ## 2.4 Arch Linux
     $ yaourt -S kbbi-qt
+    atau
+    $ git clone https://aur.archlinux.org/kbbi-qt.git
+    $ cd kbbi-qt
+    $ makepkg -si
 
 ## 2.5 Instal dari source code
 Untuk melakukan kompilasi, pastikan sistem operasi Anda sudah memiliki **GCC dengan dukungan C++**, **Qt5**, dan **qmake (qtchooser)**.
