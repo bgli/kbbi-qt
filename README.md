@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/bgli/kbbi-qt.svg?branch=master)](https://travis-ci.org/bgli/kbbi-qt)
 [![Copr](https://copr.fedorainfracloud.org/coprs/alunux/kbbi-qt-git/package/KBBI-Qt/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/alunux/kbbi-qt-git/)
 
-KBBI Qt adalah aplikasi Kamus Besar Bahasa Indonesia berbasis _Graphical User Interface_ (GUI) yang dikembangkan menggunakan bahasa pemrograman C++ dan _Framework_ Qt. KBBI Qt memiliki antarmuka grafis yang dapat digunakan dengan mudah di desktop GNU/Linux. KBBI Qt merupakan perangkat lunak bebas _(free software)_ berlisensi GNU GPL v3.0. Saat ini KBBI Qt siap untuk dipasang pada distribusi GNU/Linux Fedora 22/23/24, CentOS 7/RHEL 7, Debian dan distro-distro turunan Debian serta sistem operasi Windows.
+KBBI Qt adalah aplikasi Kamus Besar Bahasa Indonesia berbasis _Graphical User Interface_ (GUI) yang dikembangkan menggunakan bahasa pemrograman C++ dan _Framework_ Qt. KBBI Qt memiliki antarmuka grafis yang dapat digunakan dengan mudah di desktop GNU/Linux. KBBI Qt merupakan perangkat lunak bebas _(free software)_ berlisensi GNU GPL v3.0. Saat ini KBBI Qt siap untuk dipasang pada distribusi GNU/Linux Fedora 23/24/25/Rawhide, CentOS 7/RHEL 7, Debian dan distro-distro turunan Debian serta sistem operasi Windows.
 
 ![Screenshot](screenshot.png ""Screenshot"")
 
