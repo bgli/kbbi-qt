@@ -29,6 +29,7 @@
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QDir>
+#include <QUrl>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
