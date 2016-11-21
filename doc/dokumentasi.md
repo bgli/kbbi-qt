@@ -10,13 +10,15 @@ Badan Pengembangan dan Pembinaan Bahasa (Badan Bahasa) serta Kementerian Pendidi
 KBBI Qt ingin memastikan bahwa pengguna dapat mengakses KBBI dalam keadaan luring melalui komputer atau laptop. Sebagai tambahan, KBBI Qt juga membawa PUEBI (Pedoman Umum Ejaan Bahasa Indonesia) yang bisa diakses melalui menu Ekstra pada *menu bar* (lihat poin 4.4).
 
 # 2. Pemasangan KBBI Qt
-Beberapa kontributor telah memaketkan aplikasi KBBI Qt untuk CentOS/RHEL7, Fedora, Arch Linux, dan Debian beserta turunannya. Berikut cara instal melalui distro tersebut, ditambah cara instal dari *source code* (*compile* manual).
+Beberapa kontributor telah memaketkan aplikasi KBBI Qt untuk CentOS/RHEL7, Fedora, Arch Linux, Debian beserta turunannya, dan sistem operasi Windows.
 
-## 2.1 Di CentOS/RHEL7
+Berikut cara instal KBBI Qt di distro-distro tersebut, termasuk cara instal dari *source code* (*compile* manual) dan cara instal di Windows.
+
+## 2.1 CentOS/RHEL7
     $ sudo wget https://copr.fedorainfracloud.org/coprs/alunux/kbbi-qt-git/repo/epel-7/alunux-kbbi-qt-git-epel-7.repo -O /etc/yum.repos.d/kbbi-qt.repo
     $ sudo yum install KBBI-Qt
 
-## 2.2 Di Fedora 23/24/25/Rawhide
+## 2.2 Fedora 23/24/25/Rawhide
     $ sudo dnf copr enable alunux/kbbi-qt-git
     $ sudo dnf install KBBI-Qt
 
@@ -45,6 +47,9 @@ Untuk melakukan kompilasi, pastikan sistem operasi Anda sudah memiliki **GCC den
 Untuk menghapus aplikasi:
 
     $ sudo make uninstall
+
+## 2.6 Windows
+Berkas instalasi KBBI Qt untuk Windows hanyalah berkas arsip 7z. Untuk menginstalnya, cukup ekstrak berkas **KBBI-Qt Offline.7z** lalu jalankan KBBI Qt dengan KBBI-Qt.exe.
 
 # 3. Pengenalan antarmuka
 ![pengenalan antarmuka](gbr/pengenalan-antarmuka.png)
