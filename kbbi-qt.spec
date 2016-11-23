@@ -1,7 +1,6 @@
 %global _hardened_build 1
 %global debug_package %{nil}
-%define build_timestamp %(date +"%Y%m%d").git
-%define install_dir /opt/KBBI-Qt
+%define build_timestamp %(date +"%Y%m%d")
 
 Summary: KBBI Qt: KBBI Qt adalah aplikasi Kamus Besar Bahasa Indonesia
 Name: KBBI-Qt
@@ -22,9 +21,16 @@ BuildRequires: locales
 KBBI Qt adalah aplikasi Kamus Besar Bahasa Indonesia yang dikembangkan
 menggunakan bahasa pemrograman C++ dan Framework Qt
 
+%package docs
+Summary: KBBI Qt -- Berkas-berkas Dokumentasi
+Group: Documentation/HTML
+
+%description docs
+KBBI Qt -- Berkas-berkas Dokumentasi
+Paket ini berisi dokumentasi perkenalan dan penggunaan KBBI Qt
+
 %prep
 %autosetup -n kbbi-qt-master
-patch -p1 < db_location.patch
 cd src
 for i in 256 128 64 48 32 24 16; do
     mkdir -p icons/${i}
@@ -32,20 +38,20 @@ for i in 256 128 64 48 32 24 16; do
 done
 
 %build
-cd src
-qmake-qt5
+qmake-qt5 -makefile
 make %{?_smp_mflags}
 
 %install
-cd src
-
 install -d %{buildroot}%{_bindir}
-install -d %{buildroot}%{install_dir}
 install -d %{buildroot}%{_datadir}/applications
+install -d %{buildroot}%{_datadir}/%{name}/
+install -d %{buildroot}%{_datadir}/%{name}/data/
+install -d %{buildroot}%{_datadir}/%{name}/data/puebi
 
-install -m 755 %{name} %{buildroot}%{install_dir}
-install -m 644 data/KBBI.db %{buildroot}%{install_dir}
-ln -sf %{install_dir}/%{name} %{buildroot}%{_bindir}
+install -m 755 %{name} %{buildroot}%{_bindir}
+
+cd src
+cp -vr data/ %{buildroot}%{_datadir}/%{name}
 
 cat >> %{name}.desktop << FOE
 [Desktop Entry]
@@ -87,15 +93,23 @@ rm -rf %{buildroot} %{_builddir}/kbbi-qt-master
 
 %files
 %defattr(-,root,root,-)
-%doc README.md LICENSE
 %license LICENSE
-%{_bindir}/%{name}
-%dir %{install_dir}
-%{install_dir}/*
+%attr(755,root,root) %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
+%dir %{_datadir}/%{name}
+%{_datadir}/%{name}/*
+
+%files docs
+%defattr(-,root,root,-)
+%doc AUTHORS README.md doc/pdf/dokumentasi.pdf
 
 %changelog
+* Mon Oct 31 2016 La Ode Muh. Fadlun Akbar <fadlun.net@gmail.com> - 20161123
+- Remove db_location.patch
+- PUEBI support
+- Add documentation package
+
 * Mon Oct 31 2016 La Ode Muh. Fadlun Akbar <fadlun.net@gmail.com> - 20161031.git
 - Create RPM SPEC for kbbi-qt
 - Patch KBBI-Qt db location
