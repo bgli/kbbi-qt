@@ -1,2 +1,3 @@
-kbbi-qt-dbgsym_1.0-alpha-1_amd64.deb debug extra
-kbbi-qt_1.0-alpha-1_amd64.deb educations optional
+kbbi-qt-dbgsym_1.0-1_amd64.deb debug extra
+kbbi-qt_1.0-1_amd64.buildinfo educations optional
+kbbi-qt_1.0-1_amd64.deb educations optional

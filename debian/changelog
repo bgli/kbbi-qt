@@ -1,5 +1,5 @@
-kbbi-qt (1.0-alpha-1) unstable; urgency=medium
+kbbi-qt (1.0-1) unstable; urgency=medium
 
-  * Build to deb
+  * Initial release
 
- -- AnTo SamalonA <ansamsoftdev@gmail.com>  Sun, 06 Nov 2016 12:38:06 +0800
+ -- AnTo SamalonA <ansamsoftdev@gmail.com>  Mon, 28 Nov 2016 05:57:27 +0800
