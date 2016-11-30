@@ -1,22 +1,24 @@
-# 1. Pengenalan KBBI-Qt
-## 1.1 Apa itu KBBI-Qt?
-KBBI-Qt adalah aplikasi Kamus Besar Bahasa Indonesia berbasis GUI (*Graphical User Interface* atau Antarmuka Berbasis Grafik) yang dikembangkan dengan bahasa pemrograman C++ dan Framework Qt.
+# 1. Pengenalan KBBI Qt
+## 1.1 Apa itu KBBI Qt?
+KBBI Qt adalah aplikasi Kamus Besar Bahasa Indonesia berbasis GUI (*Graphical User Interface* atau Antarmuka Berbasis Grafik) yang dikembangkan dengan bahasa pemrograman C++ dan Framework Qt.
 
 Dirilis dengan lisensi GNU GPL v3.0, maka KBBI Qt adalah [*free software*][3], sehingga aplikasi yang dikembangkan oleh komunitas Belajar GNU/Linux Indonesia (BGLI) ini bebas dijalankan untuk tujuan apapun, digunakan, didistribusikan (baik berbayar atau gratis), disalin, dimodifikasi, dan dikembangkan.
 
-## 1.2 Keuntungan menggunakan KBBI-Qt
+## 1.2 Keuntungan menggunakan KBBI Qt
 Badan Pengembangan dan Pembinaan Bahasa (Badan Bahasa) serta Kementerian Pendidikan dan Kebudayaan (Kemendikbud) sebenarnya telah merilis aplikasi KBBI berbasis web; [kbbi.web.id][0] (KBBI III), [kbbi4.portalbahasa.com][1] (KBBI IV), dan [kbbi.kemdikbud.go.id][2] (KBBI V). Namun, ketiganya memiliki kekurangan, yakni pengguna harus dalam keadaan daring untuk mengaksesnya.
 
-KBBI-Qt ingin memastikan bahwa pengguna dapat mengakses KBBI dalam keadaan luring melalui komputer atau laptop. Sebagai tambahan, KBBI-Qt juga membawa PUEBI (Pedoman Umum Ejaan Bahasa Indonesia) yang bisa diakses melalui menu Ekstra pada *menu bar* (lihat poin 4.4).
+KBBI Qt ingin memastikan bahwa pengguna dapat mengakses KBBI dalam keadaan luring melalui komputer atau laptop. Sebagai tambahan, KBBI Qt juga membawa PUEBI (Pedoman Umum Ejaan Bahasa Indonesia) yang bisa diakses melalui menu Ekstra pada *menu bar* (lihat poin 4.4).
 
-# 2. Pemasangan KBBI-Qt
-Beberapa kontributor telah memaketkan aplikasi KBBI-Qt untuk CentOS/RHEL7, Fedora, Arch Linux, dan Debian beserta turunannya. Berikut cara instal melalui distro tersebut, ditambah cara instal dari *source code* (*compile* manual).
+# 2. Pemasangan KBBI Qt
+Beberapa kontributor telah memaketkan aplikasi KBBI Qt untuk CentOS/RHEL7, Fedora, Arch Linux, Debian beserta turunannya, dan sistem operasi Windows.
 
-## 2.1 Di CentOS/RHEL7
+Berikut cara instal KBBI Qt di distro-distro tersebut, termasuk cara instal dari *source code* (*compile* manual) dan cara instal di Windows.
+
+## 2.1 CentOS/RHEL7
     $ sudo wget https://copr.fedorainfracloud.org/coprs/alunux/kbbi-qt-git/repo/epel-7/alunux-kbbi-qt-git-epel-7.repo -O /etc/yum.repos.d/kbbi-qt.repo
     $ sudo yum install KBBI-Qt
 
-## 2.2 Di Fedora 23/24/25/Rawhide
+## 2.2 Fedora 23/24/25/Rawhide
     $ sudo dnf copr enable alunux/kbbi-qt-git
     $ sudo dnf install KBBI-Qt
 
@@ -26,7 +28,9 @@ Beberapa kontributor telah memaketkan aplikasi KBBI-Qt untuk CentOS/RHEL7, Fedor
 
 ## 2.4 Arch Linux
     $ yaourt -S kbbi-qt
-    atau
+
+atau
+
     $ git clone https://aur.archlinux.org/kbbi-qt.git
     $ cd kbbi-qt
     $ makepkg -si
@@ -44,10 +48,13 @@ Untuk menghapus aplikasi:
 
     $ sudo make uninstall
 
+## 2.6 Windows
+Berkas instalasi KBBI Qt untuk Windows hanyalah berkas arsip 7z. Untuk menginstalnya, cukup ekstrak berkas **KBBI-Qt Offline.7z** lalu jalankan KBBI Qt dengan KBBI-Qt.exe.
+
 # 3. Pengenalan antarmuka
 ![pengenalan antarmuka](gbr/pengenalan-antarmuka.png)
 
-# 4. Penggunaan KBBI-Qt
+# 4. Penggunaan KBBI Qt
 
 ## 4.1 Cari arti kata
 
@@ -73,13 +80,13 @@ Misal, kata "kamus" termuat dalam arti kata "bahasa", "bausastra", "beli", dll.
 
 Klik kolom hasil pencarian, tahan tombol *Ctrl* pada *keyboard*, lalu *scroll* menggunakan *mouse*.
 
-## 4.3 Mengakses PUEBI
+## 4.4 Mengakses PUEBI
 
 Klik "Ekstra" pada *menu bar*, lalu pilih PUEBI. PUEBI akan terbuka di peramban favorit Anda secara otomatis.
 
-## 4.4 Keterangan aplikasi, nama-nama pengembang, dan lisensi
+## 4.5 Keterangan aplikasi, nama-nama pengembang, dan lisensi
 
-Untuk melihat penjelasan singkat seputar KBBI-Qt, nama-nama pengembang, dan lisensi, klik "Aplikasi" pada *menu bar*, lalu pilih "Tentang".
+Untuk melihat penjelasan singkat seputar KBBI Qt, nama-nama pengembang, dan lisensi, klik "Aplikasi" pada *menu bar*, lalu pilih "Tentang".
 
 **Tampilan dialog Tentang Aplikasi**:
 

@@ -68,12 +68,12 @@ unix {
 	target.path = $$INSTALLBASE/bin
 	dbtarget.path = $$INSTALLBASE/share/$$TARGET/data
 	dbtarget.files += src/data/KBBI.db src/data/*.html
-	htmlresources.path = $$INSTALLBASE/share/$$TARGET/data/uB5I0d8t
-        htmlresources.files += src/data/uB5I0d8t/*
+	htmlresources.path = $$INSTALLBASE/share/$$TARGET/data/puebi
+        htmlresources.files += src/data/puebi/*
 	icons.path = $$INSTALLBASE/share/pixmaps
 	icons.files = src/KBBI-qt.png
         docs.path = $$INSTALLBASE/share/doc/$$TARGET/
-        docs.files += AUTHORS LICENSE README.md
+        docs.files += AUTHORS LICENSE README.md doc/pdf/dokumentasi.pdf
         desktop.path = $$INSTALLBASE/share/applications/
 	desktop.files = KBBI-Qt.desktop
         INSTALLS += target  dbtarget icons docs desktop htmlresources
