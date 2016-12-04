@@ -1,4 +1,4 @@
 KBBI-Qt /usr/bin/
 *.desktop /usr/share/applications/
-kbbi-qt.png /usr/share/pixmaps/
-data /usr/share/KBBI-Qt/
+src/kbbi-qt.png /usr/share/pixmaps/
+src/data /usr/share/KBBI-Qt/
