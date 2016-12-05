@@ -1,4 +1,4 @@
 KBBI-Qt /usr/bin/
-KBBI.db /opt/KBBI-Qt/
 *.desktop /usr/share/applications/
-kbbi-qt.png /usr/share/icons/
+src/kbbi-qt.png /usr/share/pixmaps/
+src/data /usr/share/KBBI-Qt/
