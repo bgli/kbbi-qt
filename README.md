@@ -29,18 +29,30 @@ $ sudo dnf install KBBI-Qt
 ```
 
 **[Debian dan Distro Turunan Debian]**  
-
+Untuk 32-bit:
 ``` sh
-$ wget https://github.com/bgli/kbbi-qt/releases/download/v1.0-alpha/kbbi-qt_1.0.0-alpha-1_amd64.1.deb
-$ sudo dpkg -i kbbi-qt_1.0.0-alpha-1_amd64.deb
+$ wget https://github.com/bgli/kbbi-qt/releases/download/v1.0/kbbi-qt_1.0-1_i386.deb
+$ sudo dpkg -i kbbi-qt_1.0-1_i386.deb
+```
+
+Untuk 64-bit:
+``` sh
+ $ wget https://github.com/bgli/kbbi-qt/releases/download/v1.0/kbbi-qt_1.0-1_amd64.deb
+ $ sudo dpkg -i kbbi-qt_1.0-1_amd64.deb
+ ```
+
+**[BlankOn Linux]**
+``` sh
+$ sudo apt install kbbi-qt
 ```
 
 **[Pemasangan Melalui Source Code]**  
 ``` sh
 $ git clone https://github.com/bgli/kbbi-qt.git
 $ cd kbbi-qt
-$ qmake -project
+$ qmake KBBI-Qt.pro
 $ make
+$ sudo make clean install
 ```
 
 # Kontribusi
