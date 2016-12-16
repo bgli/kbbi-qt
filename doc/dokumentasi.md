@@ -10,7 +10,7 @@ Badan Pengembangan dan Pembinaan Bahasa (Badan Bahasa) serta Kementerian Pendidi
 KBBI Qt ingin memastikan bahwa pengguna dapat mengakses KBBI dalam keadaan luring melalui komputer atau laptop. Sebagai tambahan, KBBI Qt juga membawa PUEBI (Pedoman Umum Ejaan Bahasa Indonesia) yang bisa diakses melalui menu Ekstra pada *menu bar* (lihat poin 4.4).
 
 # 2. Pemasangan KBBI Qt
-Beberapa kontributor telah memaketkan aplikasi KBBI Qt untuk CentOS/RHEL7, Fedora, Arch Linux, Debian beserta turunannya, dan sistem operasi Windows.
+Beberapa kontributor telah memaketkan aplikasi KBBI Qt untuk CentOS/RHEL7, Fedora, Arch Linux, Debian beserta turunannya, termasuk BlankOn (sebagai paket resmi), dan sistem operasi Windows.
 
 Berikut cara instal KBBI Qt di distro-distro tersebut, termasuk cara instal dari *source code* (*compile* manual) dan cara instal di Windows.
 
@@ -23,10 +23,20 @@ Berikut cara instal KBBI Qt di distro-distro tersebut, termasuk cara instal dari
     $ sudo dnf install KBBI-Qt
 
 ## 2.3 Debian dan Distro Turunan Debian
-    $ wget https://github.com/bgli/kbbi-qt/releases/download/v1.0-alpha/kbbi-qt_1.0.0-alpha-1_amd64.1.deb
-    $ sudo dpkg -i kbbi-qt_1.0.0-alpha-1_amd64.deb
+Untuk 32-bit:
 
-## 2.4 Arch Linux
+    $ wget https://github.com/bgli/kbbi-qt/releases/download/v1.0/kbbi-qt_1.0-1_i386.deb
+    $ sudo dpkg -i kbbi-qt_1.0-1_i386.deb
+
+Untuk 64-bit:
+
+    $ wget https://github.com/bgli/kbbi-qt/releases/download/v1.0/kbbi-qt_1.0-1_amd64.deb
+    $ sudo dpkg -i kbbi-qt_1.0-1_amd64.deb
+
+## 2.4 BlankOn Linux
+    $ sudo apt install kbbi-qt
+
+## 2.5 Arch Linux
     $ yaourt -S kbbi-qt
 
 atau
@@ -35,7 +45,7 @@ atau
     $ cd kbbi-qt
     $ makepkg -si
 
-## 2.5 Instal dari source code
+## 2.6 Instal dari source code
 Untuk melakukan kompilasi, pastikan sistem operasi Anda sudah memiliki **GCC dengan dukungan C++**, **Qt5**, dan **qmake (qtchooser)**.
 
     $ git clone https://github.com/bgli/kbbi-qt.git
@@ -48,8 +58,8 @@ Untuk menghapus aplikasi:
 
     $ sudo make uninstall
 
-## 2.6 Windows
-Berkas instalasi KBBI Qt untuk Windows hanyalah berkas arsip 7z. Untuk menginstalnya, cukup ekstrak berkas **KBBI-Qt Offline.7z** lalu jalankan KBBI Qt dengan KBBI-Qt.exe.
+## 2.7 Windows
+Unduh dari https://github.com/bgli/kbbi-qt/releases/download/v1.0/kbbi-qt_1.0-1_win32.7z. Untuk menginstalnya, cukup ekstrak berkas **kbbi-qt\_1.0-1_win32..7z** lalu jalankan KBBI Qt dengan KBBI-Qt.exe.
 
 # 3. Pengenalan antarmuka
 ![pengenalan antarmuka](gbr/pengenalan-antarmuka.png)
