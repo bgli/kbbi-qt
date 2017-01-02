@@ -10,7 +10,7 @@ Badan Pengembangan dan Pembinaan Bahasa (Badan Bahasa) serta Kementerian Pendidi
 KBBI Qt ingin memastikan bahwa pengguna dapat mengakses KBBI dalam keadaan luring melalui komputer atau laptop. Sebagai tambahan, KBBI Qt juga membawa PUEBI (Pedoman Umum Ejaan Bahasa Indonesia) yang bisa diakses melalui menu Ekstra pada *menu bar* (lihat poin 4.4).
 
 # 2. Pemasangan KBBI Qt
-Beberapa kontributor telah memaketkan aplikasi KBBI Qt untuk CentOS/RHEL7, Fedora, Arch Linux, Debian beserta turunannya, termasuk BlankOn (sebagai paket resmi), dan sistem operasi Windows.
+Beberapa kontributor telah memaketkan aplikasi KBBI Qt untuk CentOS/RHEL7, Fedora, Arch Linux, Debian beserta turunannya, termasuk BlankOn (sebagai paket resmi), Slackware beserta turunannya dan sistem operasi Windows.
 
 Berikut cara instal KBBI Qt di distro-distro tersebut, termasuk cara instal dari *source code* (*compile* manual) dan cara instal di Windows.
 
@@ -22,7 +22,7 @@ Berikut cara instal KBBI Qt di distro-distro tersebut, termasuk cara instal dari
     $ sudo dnf copr enable alunux/kbbi-qt-git
     $ sudo dnf install KBBI-Qt
 
-## 2.3 Debian dan Distro Turunan Debian
+## 2.3 Debian dan Distro Turunannya
 Untuk 32-bit:
 
     $ wget https://github.com/bgli/kbbi-qt/releases/download/v1.0/kbbi-qt_1.0-1_i386.deb
@@ -45,7 +45,14 @@ atau
     $ cd kbbi-qt
     $ makepkg -si
 
-## 2.6 Instal dari source code
+## 2.6 Slackware dan Distro Turunannya
+    $ git clone https://github.com/sasongko26/kbbi-qt-slackbuild.git
+    $ cd kbbi-qt-slackbuild
+    # chmod +x kbbi-qt.SlackBuild
+    # ./kbbi-qt.SlackBuild
+    # installpkg /tmp/kbbi-qt*.tgz
+
+## 2.7 Instal dari source code
 Untuk melakukan kompilasi, pastikan sistem operasi Anda sudah memiliki **GCC dengan dukungan C++**, **Qt5**, dan **qmake (qtchooser)**.
 
     $ git clone https://github.com/bgli/kbbi-qt.git
@@ -58,7 +65,7 @@ Untuk menghapus aplikasi:
 
     $ sudo make uninstall
 
-## 2.7 Windows
+## 2.8 Windows
 Unduh dari https://github.com/bgli/kbbi-qt/releases/download/v1.0/kbbi-qt_1.0-1_win32.7z. Untuk menginstalnya, cukup ekstrak berkas **kbbi-qt\_1.0-1_win32..7z** lalu jalankan KBBI Qt dengan KBBI-Qt.exe.
 
 # 3. Pengenalan antarmuka
