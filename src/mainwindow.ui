@@ -119,8 +119,8 @@
          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Aurulent Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.SF NS Text'; font-size:13pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Roboto'; font-size:11pt; font-weight:200; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.SF NS Text'; font-size:13pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
@@ -134,12 +134,15 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>560</width>
-     <height>23</height>
+     <height>29</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFIle">
     <property name="title">
-     <string>Aplikasi</string>
+     <string>&amp;Aplikasi</string>
+    </property>
+    <property name="KeyShortcutAplikasi" stdset="0">
+     <string>Alt+A</string>
     </property>
     <addaction name="actionTentang"/>
     <addaction name="separator"/>
@@ -147,7 +150,10 @@ p, li { white-space: pre-wrap; }
    </widget>
    <widget class="QMenu" name="menuEkstra">
     <property name="title">
-     <string>Ekstra</string>
+     <string>&amp;Ekstra</string>
+    </property>
+    <property name="KeyShortcutEkstra" stdset="0">
+     <string>Alt+E</string>
     </property>
     <addaction name="actionPUEBI"/>
    </widget>
@@ -162,17 +168,26 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionTentang">
    <property name="text">
-    <string>Tentang</string>
+    <string>&amp;Tentang</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+T</string>
    </property>
   </action>
   <action name="actionKeluar">
    <property name="text">
-    <string>Keluar</string>
+    <string>&amp;Keluar</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+K</string>
    </property>
   </action>
   <action name="actionPUEBI">
    <property name="text">
-    <string>PUEBI</string>
+    <string>P&amp;UEBI</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+U</string>
    </property>
   </action>
  </widget>
