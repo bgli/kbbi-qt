@@ -1,3 +1,9 @@
+kbbi-qt (1.1-0) unstable; urgency=medium
+
+  * Add new feature it is shortcut keyboard.
+
+ -- AnTo SamalonA <ansamsoftdev@gmail.com>  Fri, 17 Mar 2017 07:31:58 +0800
+
 kbbi-qt (1.0-1) unstable; urgency=medium
 
   * Initial release.
