@@ -5,7 +5,7 @@
 
 KBBI Qt adalah aplikasi Kamus Besar Bahasa Indonesia berbasis _Graphical User Interface_ (GUI) yang dikembangkan menggunakan bahasa pemrograman C++ dan _Framework_ Qt. KBBI Qt memiliki antarmuka grafis yang dapat digunakan dengan mudah di desktop GNU/Linux. KBBI Qt merupakan perangkat lunak bebas _(free software)_ berlisensi GNU GPL v3.0. Saat ini KBBI Qt siap untuk dipasang pada distribusi GNU/Linux Fedora 23/24/25/Rawhide, CentOS 7/RHEL 7, Debian dan distro-distro turunan Debian serta sistem operasi Windows.
 
-![Screenshot](screenshot.png ""Screenshot"")
+![Screenshot](screenshot.png)
 
 # Ikut Terlibat
 Kami sangat terbuka apabila Anda ingin bergabung dan terlibat dalam proyek ini. Segala bentuk kontribusi Anda akan sangat membantu kami dalam mengembangkan aplikasi ini.
@@ -29,18 +29,30 @@ $ sudo dnf install KBBI-Qt
 ```
 
 **[Debian dan Distro Turunan Debian]**  
-
+Untuk 32-bit:
 ``` sh
-$ wget https://github.com/bgli/kbbi-qt/releases/download/v1.0-alpha/kbbi-qt_1.0.0-alpha-1_amd64.1.deb
-$ sudo dpkg -i kbbi-qt_1.0.0-alpha-1_amd64.deb
+$ wget https://github.com/bgli/kbbi-qt/releases/download/v1.0/kbbi-qt_1.0-1_i386.deb
+$ sudo dpkg -i kbbi-qt_1.0-1_i386.deb
+```
+
+Untuk 64-bit:
+``` sh
+ $ wget https://github.com/bgli/kbbi-qt/releases/download/v1.0/kbbi-qt_1.0-1_amd64.deb
+ $ sudo dpkg -i kbbi-qt_1.0-1_amd64.deb
+ ```
+
+**[BlankOn Linux]**
+``` sh
+$ sudo apt install kbbi-qt
 ```
 
 **[Pemasangan Melalui Source Code]**  
 ``` sh
 $ git clone https://github.com/bgli/kbbi-qt.git
 $ cd kbbi-qt
-$ qmake -project
+$ qmake KBBI-Qt.pro
 $ make
+$ sudo make clean install
 ```
 
 # Kontribusi
@@ -62,6 +74,7 @@ Silakan hubungi kami via Telegram jika Anda berminat untuk terlibat dalam pengem
 * La Ode Muh. Fadlun (https://github.com/alunux)
 * Listya Adinugroho (ladinugroho@yahoo.co.id)
 * Nadilah Nurtalia (nadhilahnurtalia@yahoo.co.id)
+* Muhammad Irwan Andriawan (https://github.com/andriawan)
 * Ramdziana Feri Yustitanto (https://github.com/rafeyu)
 * Rania el-Amina (https://github.com/raniaamina)
 * Rizky Tia Rifianty (rizkyciki@gmail.com)
