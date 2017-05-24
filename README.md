@@ -5,7 +5,7 @@
 
 KBBI Qt adalah aplikasi Kamus Besar Bahasa Indonesia berbasis _Graphical User Interface_ (GUI) yang dikembangkan menggunakan bahasa pemrograman C++ dan _Framework_ Qt. KBBI Qt memiliki antarmuka grafis yang dapat digunakan dengan mudah di desktop GNU/Linux. KBBI Qt merupakan perangkat lunak bebas _(free software)_ berlisensi GNU GPL v3.0. Saat ini KBBI Qt siap untuk dipasang pada distribusi GNU/Linux Fedora 23/24/25/Rawhide, CentOS 7/RHEL 7, Debian dan distro-distro turunan Debian serta sistem operasi Windows.
 
-![Screenshot](screenshot.png ""Screenshot"")
+![Screenshot](screenshot.png)
 
 # Ikut Terlibat
 Kami sangat terbuka apabila Anda ingin bergabung dan terlibat dalam proyek ini. Segala bentuk kontribusi Anda akan sangat membantu kami dalam mengembangkan aplikasi ini.
@@ -74,6 +74,7 @@ Silakan hubungi kami via Telegram jika Anda berminat untuk terlibat dalam pengem
 * La Ode Muh. Fadlun (https://github.com/alunux)
 * Listya Adinugroho (ladinugroho@yahoo.co.id)
 * Nadilah Nurtalia (nadhilahnurtalia@yahoo.co.id)
+* Muhammad Irwan Andriawan (https://github.com/andriawan)
 * Ramdziana Feri Yustitanto (https://github.com/rafeyu)
 * Rania el-Amina (https://github.com/raniaamina)
 * Rizky Tia Rifianty (rizkyciki@gmail.com)
