@@ -1,0 +1,16 @@
+Source: kbbi-qt
+Section: educations
+Priority: optional
+Maintainer: AnTo SamalonA <ansamsoftdev@gmail.com>
+Build-Depends: qt5-qmake, libqt5webkit5-dev, qttools5-dev, qttools5-dev-tools, libqt5opengl5, qtlocation5-dev, qtpositioning5-dev, libqt5sensors5-dev, qtbase5-private-dev, qtdeclarative5-dev, debhelper (>= 9)
+Standards-Version: 3.9.8
+Homepage: https://github.com/bgli
+Vcs-Git: https://github.com/bgli/kbbi-qt.git
+Vcs-Browser: https://github.com/bgli/kbbi-qt.git
+
+Package: kbbi-qt
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libqt5sql5-sqlite, libqt5sql5, libqt5core5a, libc6 (>=2.4)
+Description: KBBI-qt is dictionary build from Qt framework
+ KBBI Qt adalah aplikasi GUI Kamus Besar Bahasa Indonesia yang dikembangkan menggunakan bahasa pemrograman C++ dan Framework Qt.
+ KBBI Qt memiliki antarmuka grafis yang bisa digunakan dengan mudah di desktop GNU/Linux.

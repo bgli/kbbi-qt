@@ -1,0 +1,13 @@
+Package: kbbi-qt-dbgsym
+Source: kbbi-qt
+Version: 1.0-1
+Architecture: amd64
+Maintainer: AnTo SamalonA <ansamsoftdev@gmail.com>
+Installed-Size: 462
+Depends: kbbi-qt (= 1.0-1)
+Section: debug
+Priority: extra
+Homepage: https://github.com/bgli
+Description: Debug symbols for kbbi-qt
+Auto-Built-Package: debug-symbols
+Build-Ids: 59f7d7744fa408f7ec6cf913290e7fb9403131f5
