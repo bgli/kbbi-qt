@@ -46,7 +46,28 @@ Untuk 64-bit:
 $ sudo apt install kbbi-qt
 ```
 
-**[Pemasangan Melalui Source Code]**  
+**[Arch Linux]**
+```sh
+    $ yaourt -S kbbi-qt
+```
+atau
+```sh
+    $ git clone https://aur.archlinux.org/kbbi-qt.git
+    $ cd kbbi-qt
+    $ makepkg -si
+```
+
+**[Slackware dan Distro Turunannya]**
+```sh
+    $ git clone https://github.com/sasongko26/kbbi-qt-slackbuild.git
+    $ cd kbbi-qt-slackbuild
+    # chmod +x kbbi-qt.SlackBuild
+    # ./kbbi-qt.SlackBuild
+    # installpkg /tmp/kbbi-qt*.tgz
+```
+
+**[Pemasangan Melalui Source Code]** 
+Untuk melakukan kompilasi, pastikan sistem operasi Anda sudah memiliki **GCC dengan dukungan C++**, **Qt5**, dan **qmake (qtchooser)**.
 ``` sh
 $ git clone https://github.com/bgli/kbbi-qt.git
 $ cd kbbi-qt
@@ -54,6 +75,9 @@ $ qmake KBBI-Qt.pro
 $ make
 $ sudo make clean install
 ```
+
+**[Windows]**
+Unduh dari https://github.com/bgli/kbbi-qt/releases/download/v1.0/kbbi-qt_1.0-1_win32.7z. Untuk menginstalnya, cukup ekstrak berkas **kbbi-qt\_1.0-1_win32..7z** lalu jalankan KBBI Qt dengan KBBI-Qt.exe.
 
 # Kontribusi
 Untuk berkontribusi silakan _fork_ repositori ini dan melakukan _pull request_ terhadap _branch **dev**_
