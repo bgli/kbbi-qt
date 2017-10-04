@@ -52,7 +52,7 @@ $ git clone https://github.com/bgli/kbbi-qt.git
 $ cd kbbi-qt
 $ qmake KBBI-Qt.pro
 $ make
-$ sudo make clean install
+$ sudo make clean install prefix=(tempat pemasangan paket,misal /usr/local)
 ```
 
 # Kontribusi
