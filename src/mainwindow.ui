@@ -156,6 +156,8 @@ p, li { white-space: pre-wrap; }
      <string>Alt+E</string>
     </property>
     <addaction name="actionPUEBI"/>
+    <addaction name="actionTema_Gelap"/>
+    <addaction name="actionTema_Biasa"/>
    </widget>
    <addaction name="menuFIle"/>
    <addaction name="menuEkstra"/>
@@ -188,6 +190,22 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="shortcut">
     <string>Alt+U</string>
+   </property>
+  </action>
+  <action name="actionTema_Gelap">
+   <property name="text">
+    <string>Tema Gelap</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+G</string>
+   </property>
+  </action>
+  <action name="actionTema_Biasa">
+   <property name="text">
+    <string>Tema Biasa</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+B</string>
    </property>
   </action>
  </widget>

@@ -52,6 +52,10 @@ private slots:
 
     void on_lineCari_textEdited(const QString &text);
 
+    void on_actionTema_Gelap_triggered();
+
+    void on_actionTema_Biasa_triggered();
+
 private:
     Ui::MainWindow *ui;
     QSqlDatabase database;

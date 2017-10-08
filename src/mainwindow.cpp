@@ -216,3 +216,27 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::on_actionTema_Gelap_triggered()
+{
+    // styling with css
+    this->setStyleSheet("background-color: #17191a;");
+    ui->menuBar->setStyleSheet("background-color: #4d5356; color: #cbcfd1;");
+    ui->lineCari->setStyleSheet("background-color: #4d5356; color: #ffffff;");
+    ui->checkAutoCari->setStyleSheet("color: #cbcfd1; background: none;");
+    ui->chekCariDetail->setStyleSheet("color: #cbcfd1; background: none;");
+    ui->listView->setStyleSheet("background-color: #3f3a3a; color: #ffffff;");
+    ui->detailResult->setStyleSheet("background-color: #3f3a3a; color: #ffffff;");
+}
+
+void MainWindow::on_actionTema_Biasa_triggered()
+{
+    // back to default style
+    this->setStyleSheet("");
+    ui->menuBar->setStyleSheet("");
+    ui->lineCari->setStyleSheet("");
+    ui->checkAutoCari->setStyleSheet("");
+    ui->chekCariDetail->setStyleSheet("");
+    ui->listView->setStyleSheet("");
+    ui->detailResult->setStyleSheet("");
+}
