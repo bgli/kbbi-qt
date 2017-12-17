@@ -28,6 +28,8 @@
 
 const QString DB_NAME = "KBBI.db";
 
+class QTimer;
+
 namespace Ui {
 class MainWindow;
 }
@@ -39,6 +41,9 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+protected:
+    bool eventFilter(QObject *watched, QEvent *event);
 
 private slots:
     void slotCariKata();
@@ -56,6 +61,7 @@ private:
     Ui::MainWindow *ui;
     QSqlDatabase database;
     QSqlQueryModel *kamusModel;
+    QTimer *m_searchTimer;
     bool autoCari;
 
     // Action
