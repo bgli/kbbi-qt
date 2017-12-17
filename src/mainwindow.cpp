@@ -30,6 +30,8 @@
 #include <QDesktopWidget>
 #include <QDir>
 #include <QUrl>
+#include <QTimer>
+#include <QKeyEvent>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -41,7 +43,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Setup Signal and Slot cari
     connect(ui->btnCari,SIGNAL(clicked(bool)),this,SLOT(slotCariKata()));
-    connect(ui->lineCari,SIGNAL(returnPressed()),this,SLOT(slotCariKata()));
+
+    ui->lineCari->installEventFilter(this);
+    m_searchTimer = new QTimer(this);
+    m_searchTimer->setSingleShot(true);
+    connect(m_searchTimer, SIGNAL(timeout()), SLOT(slotCariKata()));
 
     // Signal Slot pilih kata
     connect(ui->listView,SIGNAL(clicked(QModelIndex)),this,SLOT(pilihKata(QModelIndex)));
@@ -214,5 +220,16 @@ void MainWindow::on_lineCari_textEdited(const QString &text)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+bool MainWindow::eventFilter(QObject *watched, QEvent *event)
+{
+    QLineEdit *lineEdit = qobject_cast<QLineEdit*>(watched);
+    if(lineEdit == ui->lineCari) {
+        if(event->type() == QEvent::KeyRelease)
+            m_searchTimer->start(500);
+    }
+
+    return QObject::eventFilter(watched, event);
 }
 
