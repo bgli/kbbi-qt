@@ -53,16 +53,11 @@ private slots:
 
     void on_actionPUEBI_triggered();
 
-    void on_checkAutoCari_clicked();
-
-    void on_lineCari_textEdited(const QString &text);
-
 private:
     Ui::MainWindow *ui;
     QSqlDatabase database;
     QSqlQueryModel *kamusModel;
     QTimer *m_searchTimer;
-    bool autoCari;
 
     // Action
     void searchQuery(QString keyword);
