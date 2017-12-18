@@ -35,20 +35,15 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow), autoCari(false)
+    ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    ui->btnCari->hide();
-
-    // Setup Signal and Slot cari
-    connect(ui->btnCari,SIGNAL(clicked(bool)),this,SLOT(slotCariKata()));
-
     ui->lineCari->installEventFilter(this);
     m_searchTimer = new QTimer(this);
     m_searchTimer->setSingleShot(true);
-    connect(m_searchTimer, SIGNAL(timeout()), SLOT(slotCariKata()));
 
+    // Setup Signal and Slot cari
+    connect(m_searchTimer, SIGNAL(timeout()), SLOT(slotCariKata()));
     // Signal Slot pilih kata
     connect(ui->listView,SIGNAL(clicked(QModelIndex)),this,SLOT(pilihKata(QModelIndex)));
 
@@ -97,8 +92,6 @@ void MainWindow::searchQuery(QString keyword)
     if(keyword.isEmpty()){
         queryCari += " LIMIT 0,100";
     }
-
-    // qDebug()<<queryCari;
 
     kamusModel->setQuery(queryCari);
 
@@ -202,19 +195,6 @@ void MainWindow::on_actionPUEBI_triggered()
 #endif
 
     QDesktopServices::openUrl(QUrl(puebiPath));
-}
-
-void MainWindow::on_checkAutoCari_clicked()
-{
-    autoCari = ui->checkAutoCari->isChecked();
-}
-
-void MainWindow::on_lineCari_textEdited(const QString &text)
-{
-    if(autoCari == false)
-        return;
-
-    searchQuery(text);
 }
 
 MainWindow::~MainWindow()
