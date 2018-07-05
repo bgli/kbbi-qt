@@ -42,3 +42,4 @@ CMakeLists.txt.user
 *~
 *.deb
 *.tar.xz
+debian/.*
