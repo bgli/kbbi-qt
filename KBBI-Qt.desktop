@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=1.0
-Name=KBBI-Qt
+Name=KBBI Qt
 Comment=KBBI-Qt Indonesian dictionary
 GenericName=KBBI-Qt
 Exec=/usr/bin/KBBI-Qt
@@ -8,4 +8,4 @@ Terminal=false
 X-MultipleArgs=false
 Type=Application
 Icon=/usr/share/pixmaps/kbbi-qt.png
-Categories=Educations;Office;
+Categories=Education;Office;

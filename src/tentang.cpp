@@ -64,6 +64,9 @@ void tentang::onContributorItemClicked(QModelIndex index){
     case 8:
         this->openGithub("showcheap");
         break;
+    case 9:
+        this->openGithub("andriawan");
+        break;
     default:
         qDebug()<<"Default";
         break;

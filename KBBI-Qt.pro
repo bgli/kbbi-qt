@@ -1,4 +1,4 @@
-# KBBI Qt is KBBI Qt is a GUI based C++/Qt Framework program for The Big Indonesian Language Dictionary.
+# KBBI Qt is a GUI based C++/Qt Framework program for The Big Indonesian Language Dictionary.
 # Copyright (C) 2016 KBBI Qt Team <https://github.com/bgli/kbbi-qt>
 #
 # This program is free software: you can redistribute it and/or modify

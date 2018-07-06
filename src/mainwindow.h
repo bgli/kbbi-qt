@@ -28,6 +28,8 @@
 
 const QString DB_NAME = "KBBI.db";
 
+class QTimer;
+
 namespace Ui {
 class MainWindow;
 }
@@ -40,6 +42,9 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+protected:
+    bool eventFilter(QObject *watched, QEvent *event);
+
 private slots:
     void slotCariKata();
     void pilihKata(QModelIndex index);
@@ -48,15 +53,11 @@ private slots:
 
     void on_actionPUEBI_triggered();
 
-    void on_checkAutoCari_clicked();
-
-    void on_lineCari_textEdited(const QString &text);
-
 private:
     Ui::MainWindow *ui;
     QSqlDatabase database;
     QSqlQueryModel *kamusModel;
-    bool autoCari;
+    QTimer *m_searchTimer;
 
     // Action
     void searchQuery(QString keyword);
