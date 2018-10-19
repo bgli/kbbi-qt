@@ -63,7 +63,7 @@ win32 {
 
 }
 
-unix {
+unix:!haiku {
 	INSTALLBASE = /usr
 	target.path = $$INSTALLBASE/bin
 	dbtarget.path = $$INSTALLBASE/share/$$TARGET/data
@@ -77,4 +77,18 @@ unix {
         desktop.path = $$INSTALLBASE/share/applications/
 	desktop.files = KBBI-Qt.desktop
         INSTALLS += target  dbtarget icons docs desktop htmlresources
+}
+haiku {
+	DEFINES += DATADIR=\\\"$$DATADIR\\\" PKGDATADIR=\\\"$$PKGDATADIR\\\"
+	target.path =$$BINDIR
+	dbtarget.path = $$PKGDATADIR
+	dbtarget.files += src/data/KBBI.db src/data/*.html
+	htmlresources.path = $$PKGDATADIR/puebi
+        htmlresources.files += src/data/puebi/*
+	icons.path = $$INSTALLBASE/share/pixmaps
+	icons.files = src/KBBI-qt.png
+        docs.path = $$PKGDATADIR/
+        docs.files += AUTHORS LICENSE README.md doc/pdf/dokumentasi.pdf
+        INSTALLS += target  dbtarget icons docs desktop htmlresources
+	BINDIR = $$PKGDATADIR
 }
