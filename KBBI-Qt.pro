@@ -79,16 +79,15 @@ unix:!haiku {
         INSTALLS += target  dbtarget icons docs desktop htmlresources
 }
 haiku {
-	DEFINES += DATADIR=\\\"$$DATADIR\\\" PKGDATADIR=\\\"$$PKGDATADIR\\\"
-	target.path =$$BINDIR
-	dbtarget.path = $$PKGDATADIR
+	INSTALLBASE = /system/apps
+	target.path = $$INSTALLBASE/$$TARGET
+	dbtarget.path = $$INSTALLBASE/$$TARGET/data
 	dbtarget.files += src/data/KBBI.db src/data/*.html
-	htmlresources.path = $$PKGDATADIR/puebi
+	htmlresources.path = $$INSTALLBASE/$$TARGET/data/puebi
         htmlresources.files += src/data/puebi/*
-	icons.path = $$INSTALLBASE/share/pixmaps
+	icons.path = $$INSTALLBASE/$$TARGET/pixmaps
 	icons.files = src/KBBI-qt.png
-        docs.path = $$PKGDATADIR/
+        docs.path = $$INSTALLBASE/$$TARGET/doc/
         docs.files += AUTHORS LICENSE README.md doc/pdf/dokumentasi.pdf
-        INSTALLS += target  dbtarget icons docs desktop htmlresources
-	BINDIR = $$PKGDATADIR
+        INSTALLS += target  dbtarget icons docs  htmlresources
 }
